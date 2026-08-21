@@ -1,6 +1,6 @@
 {
   "name": "gitkura",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Disaster-proof Git repository vault and automated multi-cloud synchronization engine",
   "main": "dist-electron/main.js",
   "scripts": {
