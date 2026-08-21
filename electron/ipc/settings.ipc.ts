@@ -13,6 +13,7 @@ export function registerSettingsHandlers() {
       selectedRepoIds: store.get('selectedRepoIds'),
       schedule: store.get('schedule'),
       concurrencyLimit: store.get('concurrencyLimit'),
+      archiveFormat: store.get('archiveFormat') || 'tar.gz',
     }
   })
 

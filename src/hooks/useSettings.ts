@@ -31,6 +31,7 @@ const defaultSettings: AppSettings = {
     time: '02:00',
   },
   concurrencyLimit: 5,
+  archiveFormat: 'tar.gz',
 }
 
 export function useSettings() {

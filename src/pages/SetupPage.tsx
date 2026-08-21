@@ -3,6 +3,7 @@ import { useSettings } from '../hooks/useSettings'
 import TokenInput from '../components/TokenInput'
 import BackupFolderPicker from '../components/BackupFolderPicker'
 import CloudConfig from '../components/CloudConfig'
+import ArchiveFormatPicker from '../components/ArchiveFormatPicker'
 
 export default function SetupPage() {
   const { settings, updateSettings, loading } = useSettings()
@@ -52,6 +53,11 @@ export default function SetupPage() {
           config={settings.cloudConfig}
           onProviderChange={(cloudProvider) => updateSettings({ cloudProvider })}
           onConfigChange={(cloudConfig) => updateSettings({ cloudConfig })}
+        />
+
+        <ArchiveFormatPicker
+          format={settings.archiveFormat}
+          onChange={(archiveFormat) => updateSettings({ archiveFormat })}
         />
 
         {isReady && (

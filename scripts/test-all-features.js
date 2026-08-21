@@ -88,6 +88,33 @@ async function runSuite() {
     }
   })
 
+  await test('Create universal .zip snapshot with archiver engine', async () => {
+    const archiverModule = require('archiver')
+    const zipPath = path.join(testArchivesDir, 'octocat__hello-world.zip')
+    await new Promise((resolve, reject) => {
+      const output = fs.createWriteStream(zipPath)
+      const ZipArchiveClass = archiverModule.ZipArchive || archiverModule.default?.ZipArchive
+      const archive = ZipArchiveClass
+        ? new ZipArchiveClass({ zlib: { level: 9 } })
+        : archiverModule('zip', { zlib: { level: 9 } })
+
+      output.on('close', resolve)
+      output.on('error', reject)
+      archive.on('error', reject)
+      archive.pipe(output)
+      archive.directory(testRepoDir, 'hello-world')
+      archive.finalize()
+    })
+
+    if (!fs.existsSync(zipPath)) {
+      throw new Error('Failed to create .zip archive file')
+    }
+    const stats = fs.statSync(zipPath)
+    if (stats.size < 50) {
+      throw new Error(`Zip archive too small: ${stats.size} bytes`)
+    }
+  })
+
   // --- 3. Telegram Private Channel / Bot Replication Engine ---
   console.log('\n[3/9] Testing Telegram Channel & Bot Replication Engine...')
   await test('Verify Telegram input validation guards', () => {

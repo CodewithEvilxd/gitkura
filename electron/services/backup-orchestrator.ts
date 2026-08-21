@@ -125,7 +125,11 @@ export class BackupOrchestrator extends EventEmitter {
           this.emitProgress(status)
           this.log('info', `Archiving ${repo.fullName} to vault`, repo.fullName)
 
-          const archivePath = await this.compressService.compressRepo(repoDir, archivesDir)
+          const archivePath = await this.compressService.compressRepo(
+            repoDir,
+            archivesDir,
+            settings.archiveFormat || 'tar.gz',
+          )
 
           if (this.cancelled) {
             results.push({ repo, success: false, error: 'Cancelled' })

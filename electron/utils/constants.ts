@@ -65,6 +65,7 @@ export const ALLOWED_INVOKE_CHANNELS = [
 export const DEFAULTS = {
   CONCURRENCY_LIMIT: 5,
   BACKUP_PATH: '',
+  ARCHIVE_FORMAT: 'tar.gz',
   APP_NAME: 'GitKura',
   APP_KANJI: '蔵',
 } as const

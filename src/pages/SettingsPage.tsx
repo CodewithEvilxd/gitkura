@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSettings } from '../hooks/useSettings'
 import { ipcInvoke } from '../hooks/useIpc'
 import type { ScheduleConfig } from '../types'
+import ArchiveFormatPicker from '../components/ArchiveFormatPicker'
 import logoImg from '../assets/logo.png'
 
 interface CacheStats {
@@ -187,6 +188,12 @@ export default function SettingsPage() {
             </div>
           )}
         </div>
+
+        {/* Compression Format Card */}
+        <ArchiveFormatPicker
+          format={settings.archiveFormat}
+          onChange={(archiveFormat) => updateSettings({ archiveFormat })}
+        />
 
         {/* Concurrency Card */}
         <div className="scribely-card p-7">

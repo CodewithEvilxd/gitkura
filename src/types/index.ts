@@ -1,4 +1,5 @@
 export type CloudProvider = 's3' | 'r2' | 'gdrive' | 'telegram' | 'custom' | 'none'
+export type ArchiveFormat = 'tar.gz' | 'zip'
 
 export interface AppSettings {
   githubToken: string
@@ -9,6 +10,7 @@ export interface AppSettings {
   selectedRepoIds: number[]
   schedule: ScheduleConfig
   concurrencyLimit: number
+  archiveFormat?: ArchiveFormat
 }
 
 export interface CloudConfig {
