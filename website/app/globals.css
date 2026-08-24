@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Outfit:wght@600;700;800;900&family=Caveat:wght@400;500;600;700&family=Cabin+Sketch:wght@700&family=Patrick+Hand&family=Gochi+Hand&family=Kalam:wght@400;700&family=Gaegu:wght@400;700&family=Architects+Daughter&family=Permanent+Marker&family=Rock+Salt&family=Caveat+Brush&family=Sedgwick+Ave+Display&family=Shadows+Into+Light+Two&family=Indie+Flower&family=Gloria+Hallelujah&family=Covered+By+Your+Grace&family=Reenie+Beanie&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .font-heading { font-family: 'Plus Jakarta Sans', 'Outfit', system-ui, sans-serif; }
+  .font-bricolage { font-family: 'Bricolage Grotesque', 'Outfit', system-ui, sans-serif; }
+  .font-caveat { font-family: 'Caveat', cursive, sans-serif; }
+  .font-cabin { font-family: 'Cabin Sketch', cursive, sans-serif; }
+  .font-gochi { font-family: 'Gochi Hand', cursive, sans-serif; }
+  .font-kalam { font-family: 'Kalam', cursive, sans-serif; }
+  .font-gaegu { font-family: 'Gaegu', cursive, sans-serif; }
+  .font-patrick { font-family: 'Patrick Hand', cursive, sans-serif; }
+  .font-indie { font-family: 'Indie Flower', cursive, sans-serif; }
+  .font-shadows { font-family: 'Shadows Into Light Two', cursive, sans-serif; }
+  .font-marker { font-family: 'Permanent Marker', cursive, sans-serif; }
+  .font-gloria { font-family: 'Gloria Hallelujah', cursive, sans-serif; }
+  .font-reenie { font-family: 'Reenie Beanie', cursive, sans-serif; }
+  .font-covered { font-family: 'Covered By Your Grace', cursive, sans-serif; }
+  .font-architects { font-family: 'Architects Daughter', cursive, sans-serif; }
+
+  /* Authentic Hand-Painted Dry Brush Texture Utility */
+  .brush-title {
+    font-family: 'Permanent Marker', cursive, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    filter: url(#dry-brush-filter);
+    color: #17365D;
+  }
+  .brush-gold {
+    color: #E9A51A;
+    filter: url(#dry-brush-filter);
+  }
+}
+
+:root {
+  --bg-paper: #faf8f5;
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-charcoal: #1e293b;
+  --ink-blue: #1a3a5f;
+  --ink-navy: #0f2744;
+  --highlighter-yellow: #fef08a;
+  --highlighter-mint: #dcfce7;
+  --highlighter-rose: #fee2e2;
+  --highlighter-sky: #dbeafe;
+  --highlighter-purple: #f3e8ff;
+  --highlighter-orange: #ffedd5;
+
+  /* Custom Plyr Media Player Theme Tokens */
+  --plyr-color-main: #fef08a;
+  --plyr-video-controls-background: linear-gradient(rgba(15, 23, 42, 0), rgba(15, 23, 42, 0.95));
+  --plyr-video-control-color: #ffffff;
+  --plyr-video-control-color-hover: #0f172a;
+  --plyr-video-control-background-hover: #fef08a;
+  --plyr-control-icon-size: 16px;
+  --plyr-control-spacing: 8px;
+  --plyr-control-radius: 8px;
+  --plyr-range-track-height: 5px;
+  --plyr-range-thumb-height: 13px;
+  --plyr-range-thumb-background: #ffffff;
+  --plyr-range-fill-background: #fef08a;
+  --plyr-menu-background: #0f172a;
+  --plyr-menu-color: #ffffff;
+  --plyr-menu-radius: 12px;
+  --plyr-font-family: var(--font-outfit), system-ui, sans-serif;
+  --plyr-badge-text-color: #0f172a;
+  --plyr-badge-background: #fef08a;
+}
+
+body {
+  background-color: var(--bg-paper);
+  color: var(--text-main);
+  background-image: radial-gradient(rgba(30, 41, 59, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0;
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #fef08a;
+  color: #1a3a5f;
+}
+
+/* Scribely Card System - Solid and Stable */
+.scribely-card {
+  background-color: #ffffff;
+  border: 2px solid #1e293b;
+  border-radius: 20px;
+  box-shadow: 4px 4px 0px #1e293b;
+  position: relative;
+}
+
+.scribely-card-flat {
+  background-color: #ffffff;
+  border: 2px solid #1e293b;
+  border-radius: 20px;
+  box-shadow: 4px 4px 0px #1e293b;
+  position: relative;
+}
+
+.scribely-btn {
+  border: 2px solid #1e293b;
+  box-shadow: 3px 3px 0px #1e293b;
+  user-select: none;
+}
+
+.scribely-btn:hover {
+  opacity: 0.95;
+}
+
+.scribely-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px #1e293b;
+}
+
+.scribely-badge {
+  border: 2px solid #1e293b;
+  box-shadow: 2px 2px 0px #1e293b;
+}
+
+/* ========================================================================= */
+/* COMPACT BRUTALIST BUTTON (LIGHT YELLOW SHADOW)                            */
+/* ========================================================================= */
+.brutalist-button {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  height: 38px;
+  padding: 0 12px;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  border: 2px solid #000000;
+  box-shadow: 3.5px 3.5px 0px #fef08a;
+  border-radius: 8px;
+  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.brutalist-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.18),
+    transparent
+  );
+  z-index: 1;
+  transition: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.brutalist-button:hover::before {
+  opacity: 1;
+  animation: slide 1.8s infinite;
+}
+
+.brutalist-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5.5px 5.5px 0px #000000;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.brutalist-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #fef08a;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.ms-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease-out;
+  position: relative;
+  z-index: 2;
+  color: currentColor;
+}
+
+.brutalist-button:hover .ms-logo {
+  transform: rotate(-10deg) scale(1.15);
+}
+
+.brutalist-button:active .ms-logo {
+  transform: rotate(10deg) scale(0.9);
+}
+
+.button-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  text-align: left;
+  transition: transform 0.2s ease-out;
+  position: relative;
+  z-index: 2;
+}
+
+.brutalist-button:hover .button-text {
+  transform: skew(-4deg);
+}
+
+.brutalist-button:active .button-text {
+  transform: skew(4deg);
+}
+
+.button-text span:first-child {
+  font-size: 8.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #475569;
+  font-weight: 700;
+}
+
+.button-text span:last-child {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  color: #000000;
+}
+
+.brutalist-button:active .button-text span:first-child,
+.brutalist-button:active .button-text span:last-child {
+  color: #ffffff;
+}
+
+/* Custom Plyr Component Overrides */
+.plyr-custom-wrapper .plyr--video {
+  border-radius: 14px;
+}
+
+.plyr-custom-wrapper .plyr__control--overlaid {
+  background: #fef08a !important;
+  color: #0f172a !important;
+  border: 2px solid #0f172a !important;
+  box-shadow: 4px 4px 0px #0f172a !important;
+  padding: 18px !important;
+}
+
+.plyr-custom-wrapper .plyr__control--overlaid:hover {
+  transform: scale(1.08) !important;
+  background: #fde047 !important;
+}
+
+/* Marker Highlighters */
+.highlight-yellow {
+  background: linear-gradient(104deg, rgba(254, 240, 138, 0) 0.5%, rgba(254, 240, 138, 0.88) 2%, rgba(254, 240, 138, 0.72) 97%, rgba(254, 240, 138, 0) 99.5%);
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+}
+
+.highlight-mint {
+  background: linear-gradient(104deg, rgba(220, 252, 231, 0) 0.5%, rgba(220, 252, 231, 0.88) 2%, rgba(220, 252, 231, 0.72) 97%, rgba(220, 252, 231, 0) 99.5%);
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+}
+
+.highlight-sky {
+  background: linear-gradient(104deg, rgba(219, 234, 254, 0) 0.5%, rgba(219, 234, 254, 0.88) 2%, rgba(219, 234, 254, 0.72) 97%, rgba(219, 234, 254, 0) 99.5%);
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+}
+
+.highlight-rose {
+  background: linear-gradient(104deg, rgba(254, 226, 226, 0) 0.5%, rgba(254, 226, 226, 0.88) 2%, rgba(220, 252, 231, 0.72) 97%, rgba(220, 252, 231, 0) 99.5%);
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #faf8f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border: 2px solid #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

@@ -43,7 +43,10 @@ dist
 dist-electron
 release
 out
+.next/
+website/.next/
 build/icon.ico.bak
+*.mp4
 
 # Local Vault & Archives
 .archives
