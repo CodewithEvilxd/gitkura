@@ -226,7 +226,7 @@ export default function VideoDemoSection() {
         <div className="relative inline-flex items-center justify-center gap-3 sm:gap-5 mt-4 sm:mt-2 max-w-full overflow-visible py-2">
           
           <h2 
-            className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-none select-none font-bold whitespace-nowrap inline-flex items-baseline"
+            className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-none select-none font-bold flex flex-wrap sm:inline-flex items-baseline justify-center"
             style={{ 
               fontFamily: "'Cabin Sketch', cursive",
               filter: 'drop-shadow(0 3px 3px rgba(0,0,0,0.08))',

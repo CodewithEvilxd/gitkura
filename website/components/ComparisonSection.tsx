@@ -71,7 +71,7 @@ export default function ComparisonSection() {
           </span>
         </div>
         <h2 className="text-2xl sm:text-4xl lg:text-5xl font-marker uppercase leading-[1.25] text-[#17365D] tracking-tight">
-          <span className="relative inline-block text-[#E9A51A] whitespace-nowrap">
+          <span className="relative inline-block text-[#E9A51A] sm:whitespace-nowrap">
             HOW GITKURA COMPARES
             <svg
               className="absolute left-0 -bottom-2 w-full h-3 select-none pointer-events-none"
@@ -94,8 +94,12 @@ export default function ComparisonSection() {
         <WashiTape variant="yellow" className="-top-3 right-12" />
 
         <div className="scribely-card overflow-hidden bg-white shadow-scribely-xl">
+          {/* Mobile scroll hint */}
+          <div className="md:hidden bg-amber-50/70 border-b border-pencil-black/20 px-3 py-1.5 text-center text-[11px] font-mono font-bold text-amber-900 flex items-center justify-center gap-1.5">
+            <span>↳ Scroll horizontally to view all columns</span>
+          </div>
           <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
+            <table className="w-full text-left border-collapse min-w-[580px]">
               <thead>
                 <tr className="bg-[#faf8f5] border-b-2 border-pencil-black text-xs font-mono font-bold text-ink-blue">
                   <th className="p-4 sm:p-5 font-mono">Capability &amp; Security Feature</th>

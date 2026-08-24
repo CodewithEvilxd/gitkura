@@ -71,6 +71,11 @@
   --plyr-badge-background: #fef08a;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--bg-paper);
   color: var(--text-main);

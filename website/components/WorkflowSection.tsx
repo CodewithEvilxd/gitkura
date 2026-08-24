@@ -57,7 +57,7 @@ export default function WorkflowSection() {
         </div>
         <h2 className="text-2xl sm:text-4xl lg:text-5xl font-marker uppercase leading-[1.25] text-[#17365D] tracking-tight">
           PROTECTED IN{' '}
-          <span className="relative inline-block text-[#E9A51A] whitespace-nowrap">
+          <span className="relative inline-block text-[#E9A51A] sm:whitespace-nowrap">
             UNDER 60 SECONDS.
             <svg
               className="absolute left-0 -bottom-2 w-full h-3 select-none pointer-events-none"

@@ -4,12 +4,10 @@ export default function HeroBrushHeading() {
   return (
     <div className="relative flex flex-col items-center justify-center mx-auto text-center select-none w-full">
       <h1
-        className="font-marker uppercase select-text text-center mx-auto w-full flex flex-col items-center justify-center"
+        className="font-marker uppercase select-text text-center mx-auto w-full flex flex-col items-center justify-center tracking-tight"
         style={{
-          fontSize: 'clamp(2.15rem, 4.9vw, 4.6rem)',
-          lineHeight: 1.12,
-          letterSpacing: '-0.025em',
-          wordSpacing: '-0.02em',
+          fontSize: 'clamp(1.45rem, 4.8vw, 4.6rem)',
+          lineHeight: 1.15,
           filter: 'url(#dry-brush-heavy)',
           WebkitFontSmoothing: 'antialiased',
           textRendering: 'geometricPrecision',
@@ -17,12 +15,12 @@ export default function HeroBrushHeading() {
       >
         {/* Line 1: THE FIREPROOF VAULT with clean outward-bursting marker doodles */}
         <div
-          className="relative inline-block text-[#173B68] whitespace-nowrap mx-auto text-center"
+          className="relative inline-block text-[#173B68] text-center"
           style={{ textShadow: '0 0.5px 0.5px rgba(23, 59, 104, 0.18)' }}
         >
           {/* Top-left yellow 3-ray fan burst - radiating cleanly outward */}
           <svg
-            className="absolute -top-2.5 sm:-top-4 -left-5 sm:-left-7 w-5 h-5 sm:w-7 sm:h-7 text-[#E9A51A] select-none pointer-events-none"
+            className="absolute -top-2 sm:-top-4 -left-4 sm:-left-7 w-4 h-4 sm:w-7 sm:h-7 text-[#E9A51A] select-none pointer-events-none"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -38,7 +36,7 @@ export default function HeroBrushHeading() {
 
           {/* Top-right navy 3-ray fan burst - radiating cleanly outward */}
           <svg
-            className="absolute -top-2.5 sm:-top-4 -right-5 sm:-right-7 w-5 h-5 sm:w-7 sm:h-7 text-[#173B68] select-none pointer-events-none"
+            className="absolute -top-2 sm:-top-4 -right-4 sm:-right-7 w-4 h-4 sm:w-7 sm:h-7 text-[#173B68] select-none pointer-events-none"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -52,7 +50,7 @@ export default function HeroBrushHeading() {
         </div>
 
         {/* Line 2: FOR YOUR GIT REPOSITORIES. with 100% exact mathematical center */}
-        <div className="mt-2.5 sm:mt-3.5 whitespace-nowrap mx-auto text-center inline-block">
+        <div className="mt-2 sm:mt-3.5 mx-auto text-center inline-block">
           <span
             className="text-[#173B68]"
             style={{ textShadow: '0 0.5px 0.5px rgba(23, 59, 104, 0.18)' }}
