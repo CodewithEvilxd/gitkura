@@ -495,9 +495,10 @@ export default function VideoDemoSection() {
             {/* Live Video Element */}
             <video
               ref={videoRef}
-              src="/export-1787519527893.mp4"
+              src="https://media.githubusercontent.com/media/CodewithEvilxd/gitkura/main/website/public/export-1787519527893.mp4"
               playsInline
-              preload="auto"
+              preload="metadata"
+              crossOrigin="anonymous"
               className="w-full h-full object-cover"
               onPlay={() => {
                 setIsPlaying(true)
