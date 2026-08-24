@@ -26,8 +26,8 @@ export default function Footer() {
           <span className="font-bold text-sm font-display text-ink-blue">
             GitKura 蔵
           </span>
-          <span className="text-[#64748b] hidden sm:inline">&bull;</span>
-          <span className="font-gaegu font-bold text-xs bg-emerald-100/90 text-emerald-800 px-2 py-0.5 rounded border border-emerald-300 hidden sm:inline">
+          <span className="text-[#64748b] inline">&bull;</span>
+          <span className="font-gaegu font-bold text-xs bg-emerald-100/90 text-emerald-800 px-2 py-0.5 rounded border border-emerald-300 inline">
             MIT Open Source License
           </span>
         </div>

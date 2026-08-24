@@ -1,27 +1,54 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import {
   FolderGit2,
   Zap,
   Cloud,
   Sparkles,
   Lock,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react'
 import WashiTape from './WashiTape'
 
 export default function InteractiveFeatureCards() {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return
+    const { scrollLeft, clientWidth } = scrollRef.current
+    const newIndex = Math.round(scrollLeft / (clientWidth * 0.85))
+    setActiveIndex(Math.min(2, Math.max(0, newIndex)))
+  }
+
+  const scrollToIndex = (index: number) => {
+    if (!scrollRef.current) return
+    const cardWidth = scrollRef.current.clientWidth * 0.85
+    scrollRef.current.scrollTo({
+      left: index * cardWidth,
+      behavior: 'smooth',
+    })
+    setActiveIndex(index)
+  }
+
   return (
     <div className="py-6 sm:py-8 max-w-6xl mx-auto w-full px-3 sm:px-6 select-none">
       {/* ========================================================================= */}
-      {/* 3 HIGH-POLISH HANDCRAFTED CARDS WITH SEAMLESS HIGH-RES ILLUSTRATIONS      */}
+      {/* 3 HIGH-POLISH HANDCRAFTED CARDS (SWIPEABLE CAROUSEL ON MOBILE, GRID ON DESKTOP) */}
       {/* ========================================================================= */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+      <div
+        ref={scrollRef}
+        onScroll={handleScroll}
+        className="flex md:grid md:grid-cols-3 gap-5 md:gap-6 items-stretch overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-6 pb-4 px-2 md:px-0 -mx-2 md:mx-0 no-scrollbar touch-pan-x"
+        style={{ WebkitOverflowScrolling: 'touch' }}
+      >
         
         {/* =================================================================== */}
         {/* CARD 01: FULL RAW GIT TREES (LOCAL MIRROR)                          */}
         {/* =================================================================== */}
-        <div className="relative bg-white border-2 border-pencil-black rounded-2xl p-5 shadow-[4px_4px_0px_#17365D] flex flex-col justify-between select-none">
+        <div className="w-[84vw] max-w-[340px] md:w-auto flex-shrink-0 snap-center relative bg-white border-2 border-pencil-black rounded-2xl p-5 shadow-[4px_4px_0px_#17365D] flex flex-col justify-between select-none">
           {/* Top Washi Tape */}
           <WashiTape variant="yellow" className="-top-2.5 left-8 shadow-xs scale-90" />
 
@@ -60,7 +87,7 @@ export default function InteractiveFeatureCards() {
               </p>
             </div>
 
-            {/* Seamless High-Res Hand-Drawn Vault Illustration (Native Paper Blend) */}
+            {/* Seamless High-Res Hand-Drawn Vault Illustration */}
             <div className="relative w-full py-1 flex items-center justify-center pointer-events-none select-none">
               <img
                 src="/illustrations/vault-safe.png"
@@ -88,7 +115,7 @@ export default function InteractiveFeatureCards() {
         {/* =================================================================== */}
         {/* CARD 02: DIFFERENTIAL ENGINE (DELTA SYNC)                            */}
         {/* =================================================================== */}
-        <div className="relative bg-white border-2 border-pencil-black rounded-2xl p-5 shadow-[4px_4px_0px_#17365D] flex flex-col justify-between select-none">
+        <div className="w-[84vw] max-w-[340px] md:w-auto flex-shrink-0 snap-center relative bg-white border-2 border-pencil-black rounded-2xl p-5 shadow-[4px_4px_0px_#17365D] flex flex-col justify-between select-none">
           {/* Top Washi Tape */}
           <WashiTape variant="green" className="-top-2.5 left-8 shadow-xs scale-90" />
 
@@ -155,7 +182,7 @@ export default function InteractiveFeatureCards() {
         {/* =================================================================== */}
         {/* CARD 03: ENCRYPTED SNAPSHOTS (CLOUD DISPATCH)                       */}
         {/* =================================================================== */}
-        <div className="relative bg-white border-2 border-pencil-black rounded-2xl p-5 shadow-[4px_4px_0px_#17365D] flex flex-col justify-between select-none">
+        <div className="w-[84vw] max-w-[340px] md:w-auto flex-shrink-0 snap-center relative bg-white border-2 border-pencil-black rounded-2xl p-5 shadow-[4px_4px_0px_#17365D] flex flex-col justify-between select-none">
           {/* Top Washi Tape */}
           <WashiTape variant="blue" className="-top-2.5 left-8 shadow-xs scale-90" />
 
@@ -219,6 +246,30 @@ export default function InteractiveFeatureCards() {
           </div>
         </div>
 
+      </div>
+
+      {/* ========================================================================= */}
+      {/* MOBILE INTERACTIVE SWIPE DOTS & HINT                                      */}
+      {/* ========================================================================= */}
+      <div className="md:hidden flex flex-col items-center gap-2 pt-2 select-none">
+        <div className="flex items-center gap-2">
+          {[0, 1, 2].map((idx) => (
+            <button
+              key={idx}
+              type="button"
+              onClick={() => scrollToIndex(idx)}
+              className={`transition-all duration-300 rounded-full cursor-pointer ${
+                activeIndex === idx
+                  ? 'w-7 h-2.5 bg-[#17365D] border border-pencil-black'
+                  : 'w-2.5 h-2.5 bg-slate-300 hover:bg-slate-400'
+              }`}
+              aria-label={`Go to feature slide ${idx + 1}`}
+            />
+          ))}
+        </div>
+        <span className="font-caveat font-bold text-sm text-indigo-900">
+          ← swipe cards horizontally →
+        </span>
       </div>
     </div>
   )

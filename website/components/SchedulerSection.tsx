@@ -1,5 +1,6 @@
 'use client'
 
+import React, { useState, useRef } from 'react'
 import {
   Clock,
   Cpu,
@@ -52,8 +53,28 @@ const daemonFeatures = [
 ]
 
 export default function SchedulerSection() {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return
+    const { scrollLeft, clientWidth } = scrollRef.current
+    const newIndex = Math.round(scrollLeft / (clientWidth * 0.85))
+    setActiveIndex(Math.min(3, Math.max(0, newIndex)))
+  }
+
+  const scrollToIndex = (index: number) => {
+    if (!scrollRef.current) return
+    const cardWidth = scrollRef.current.clientWidth * 0.85
+    scrollRef.current.scrollTo({
+      left: index * cardWidth,
+      behavior: 'smooth',
+    })
+    setActiveIndex(index)
+  }
+
   return (
-    <section id="scheduler" className="py-16 px-4 sm:px-8 max-w-7xl mx-auto">
+    <section id="scheduler" className="py-16 px-4 sm:px-8 max-w-7xl mx-auto select-none">
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto space-y-3 mb-12">
         <div className="inline-flex items-center gap-2 px-4 py-1 bg-purple-50/90 border-2 border-pencil-black shadow-scribely-sm rounded-full -rotate-1">
@@ -81,14 +102,19 @@ export default function SchedulerSection() {
         </p>
       </div>
 
-      {/* 4 Background Features Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      {/* 4 Background Features - Swipeable on mobile, Grid on desktop */}
+      <div
+        ref={scrollRef}
+        onScroll={handleScroll}
+        className="flex md:grid md:grid-cols-2 gap-5 md:gap-6 max-w-5xl mx-auto overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-4 pb-4 px-2 md:px-0 -mx-2 md:mx-0 no-scrollbar touch-pan-x"
+        style={{ WebkitOverflowScrolling: 'touch' }}
+      >
         {daemonFeatures.map((feat, idx) => {
           const Icon = feat.icon
           return (
             <div
               key={idx}
-              className="scribely-card p-6 sm:p-8 bg-white shadow-scribely-lg relative flex flex-col justify-between"
+              className="w-[84vw] max-w-[340px] md:w-auto flex-shrink-0 snap-center scribely-card p-6 sm:p-8 bg-white shadow-scribely-lg relative flex flex-col justify-between"
             >
               <WashiTape variant={feat.tapeVariant} className="-top-3 right-8" />
 
@@ -123,6 +149,28 @@ export default function SchedulerSection() {
             </div>
           )
         })}
+      </div>
+
+      {/* Mobile Swipe Indicator Dots */}
+      <div className="md:hidden flex flex-col items-center gap-2 pt-2 select-none">
+        <div className="flex items-center gap-2">
+          {daemonFeatures.map((_, idx) => (
+            <button
+              key={idx}
+              type="button"
+              onClick={() => scrollToIndex(idx)}
+              className={`transition-all duration-300 rounded-full cursor-pointer ${
+                activeIndex === idx
+                  ? 'w-7 h-2.5 bg-[#17365D] border border-pencil-black'
+                  : 'w-2.5 h-2.5 bg-slate-300 hover:bg-slate-400'
+              }`}
+              aria-label={`Go to feature card ${idx + 1}`}
+            />
+          ))}
+        </div>
+        <span className="font-caveat font-bold text-sm text-purple-950">
+          ← swipe daemon features horizontally →
+        </span>
       </div>
 
       {/* Cute Bottom Note */}

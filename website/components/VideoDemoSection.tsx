@@ -196,9 +196,9 @@ export default function VideoDemoSection() {
       <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-14 relative select-none">
         
         {/* Color Pencil King Crown Badge at Top-Left Header */}
-        <div className="hidden sm:inline-flex items-center gap-2 absolute -top-8 left-2 md:left-8 select-none -rotate-6">
+        <div className="inline-flex items-center gap-1 sm:gap-2 absolute -top-7 sm:-top-8 left-1 md:left-8 select-none -rotate-6">
           {/* Hand-Drawn Brown/Gold Color Pencil Crown */}
-          <svg className="w-7 h-6 text-[#9a3412] filter drop-shadow-sm" viewBox="0 0 32 26" fill="none" stroke="currentColor">
+          <svg className="w-5 h-4 sm:w-7 sm:h-6 text-[#9a3412] filter drop-shadow-sm" viewBox="0 0 32 26" fill="none" stroke="currentColor">
             <path
               d="M 3 20 L 4 7 L 10 13 L 16 3 L 22 13 L 28 7 L 29 20 Z"
               fill="#fef08a"
@@ -215,7 +215,7 @@ export default function VideoDemoSection() {
           </svg>
 
           <span 
-            className="text-xl sm:text-2xl text-[#9a3412] font-bold tracking-wide select-none"
+            className="text-sm xs:text-base sm:text-2xl text-[#9a3412] font-bold tracking-wide select-none"
             style={{ fontFamily: "'Caveat', cursive" }}
           >
             the king of git backup
@@ -274,9 +274,9 @@ export default function VideoDemoSection() {
           </h2>
 
           {/* Hand-Drawn Cute Orange/Gold Star with Crayon Rays */}
-          <div className="hidden sm:inline-block relative -top-3 sm:-top-5 -rotate-6 select-none flex-shrink-0">
+          <div className="inline-block relative -top-3 sm:-top-5 -rotate-6 select-none flex-shrink-0">
             <svg 
-              className="w-10 h-10 sm:w-14 sm:h-14 text-[#ea580c]" 
+              className="w-7 h-7 sm:w-14 sm:h-14 text-[#ea580c]" 
               viewBox="0 0 44 44" 
               fill="none" 
               stroke="currentColor" 
@@ -307,30 +307,31 @@ export default function VideoDemoSection() {
       </div>
 
       {/* ------------------------------------------------------------- */}
+      {/* ------------------------------------------------------------- */}
       {/* MAIN CONTAINER WITH EXACT PLACED COLOR PENCIL ANNOTATIONS     */}
       {/* ------------------------------------------------------------- */}
-      <div className="relative max-w-4xl mx-auto">
+      <div className="relative max-w-4xl mx-auto pt-7 sm:pt-12 pb-7 sm:pb-12 px-1 sm:px-4">
 
         {/* ------------------------------------------------------------- */}
         {/* 1. TOP-LEFT: 🛡️ air-gapped local vault ⤵                      */}
         {/* ------------------------------------------------------------- */}
-        <div className="hidden sm:inline-flex items-center gap-2 absolute -top-10 left-2 md:left-6 z-30 pointer-events-none select-none -rotate-2">
+        <div className="inline-flex items-center gap-1 sm:gap-2 absolute top-0 sm:-top-3 left-1 sm:left-6 z-30 pointer-events-none select-none -rotate-2">
           {/* Blue Color Pencil Shield */}
-          <svg className="w-6 h-6 text-[#2563eb]" viewBox="0 0 28 28" fill="none" stroke="currentColor">
+          <svg className="w-3.5 h-3.5 sm:w-6 sm:h-6 text-[#2563eb]" viewBox="0 0 28 28" fill="none" stroke="currentColor">
             <path d="M 14 3 C 19 5, 23 5, 23 11 C 23 18, 17 23, 14 25 C 11 23, 5 18, 5 11 C 5 5, 9 5, 14 3 Z" fill="#dbeafe" fillOpacity="0.4" stroke="#1d4ed8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M 9 10 L 19 10 M 8 13 L 20 13 M 10 16 L 18 16" stroke="#3b82f6" strokeWidth="1.2" strokeLinecap="round" />
             <path d="M 14 7 L 14 21" stroke="#1d4ed8" strokeWidth="1.4" strokeLinecap="round" />
           </svg>
 
           <span 
-            className="text-xl sm:text-2xl text-[#1d4ed8] font-bold tracking-wide select-none leading-none"
+            className="text-xs xs:text-sm sm:text-2xl text-[#1d4ed8] font-bold tracking-wide select-none leading-none"
             style={{ fontFamily: "'Caveat', cursive" }}
           >
             air-gapped local vault
           </span>
 
           {/* Curved Blue Arrow ⤵ pointing into frame */}
-          <svg className="w-8 h-6 text-[#2563eb] select-none ml-0.5" viewBox="0 0 35 25" fill="none" stroke="currentColor">
+          <svg className="w-4 h-3 sm:w-8 sm:h-6 text-[#2563eb] select-none ml-0.5" viewBox="0 0 35 25" fill="none" stroke="currentColor">
             <path d="M 3 6 C 14 4, 22 10, 30 20" strokeWidth="2" strokeLinecap="round" />
             <path d="M 22 19 L 30 20 L 29 11" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -339,22 +340,22 @@ export default function VideoDemoSection() {
         {/* ------------------------------------------------------------- */}
         {/* 2. TOP-RIGHT: ↙ 60 fps live delta demo ☆                      */}
         {/* ------------------------------------------------------------- */}
-        <div className="hidden sm:inline-flex items-center gap-2 absolute -top-10 right-2 md:right-6 z-30 pointer-events-none select-none rotate-2">
+        <div className="inline-flex items-center gap-1 sm:gap-2 absolute top-0 sm:-top-3 right-1 sm:right-6 z-30 pointer-events-none select-none rotate-2">
           {/* Curved Red Arrow ↙ pointing into frame */}
-          <svg className="w-8 h-6 text-[#b91c1c] select-none mr-0.5" viewBox="0 0 35 25" fill="none" stroke="currentColor">
+          <svg className="w-4 h-3 sm:w-8 sm:h-6 text-[#b91c1c] select-none mr-0.5" viewBox="0 0 35 25" fill="none" stroke="currentColor">
             <path d="M 32 6 C 21 4, 13 10, 5 20" strokeWidth="2" strokeLinecap="round" />
             <path d="M 13 19 L 5 20 L 6 11" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
 
           <span 
-            className="text-xl sm:text-2xl text-[#b91c1c] font-bold tracking-wide select-none leading-none"
+            className="text-xs xs:text-sm sm:text-2xl text-[#b91c1c] font-bold tracking-wide select-none leading-none"
             style={{ fontFamily: "'Caveat', cursive" }}
           >
             60 fps live delta demo
           </span>
 
           {/* Hand-Drawn Red Star Outline ☆ */}
-          <svg className="w-5 h-5 text-[#b91c1c]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#b91c1c]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M 12 2 L 15 8 L 22 9 L 17 14 L 18 21 L 12 17 L 6 21 L 7 14 L 2 9 L 9 8 Z" fill="#fee2e2" fillOpacity="0.5" />
           </svg>
         </div>
@@ -362,7 +363,7 @@ export default function VideoDemoSection() {
         {/* ------------------------------------------------------------- */}
         {/* 3. MID-LEFT: ⚡ differential sync ➔                           */}
         {/* ------------------------------------------------------------- */}
-        <div className="hidden xl:inline-flex items-center gap-2 absolute top-[36%] -left-52 z-30 pointer-events-none select-none -rotate-3">
+        <div className="hidden lg:inline-flex items-center gap-2 absolute top-[36%] -left-32 xl:-left-52 z-30 pointer-events-none select-none -rotate-3">
           {/* Yellow Crayon Lightning Bolt ⚡ */}
           <svg className="w-6 h-7 text-[#d97706]" viewBox="0 0 24 28" fill="none" stroke="currentColor">
             <path d="M 13 2 L 4 15 L 11 15 L 9 26 L 20 11 L 13 11 Z" fill="#fef08a" stroke="#d97706" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -393,7 +394,7 @@ export default function VideoDemoSection() {
         {/* ------------------------------------------------------------- */}
         {/* 4. MID-RIGHT: ⬅ multi-target vault ☁️                          */}
         {/* ------------------------------------------------------------- */}
-        <div className="hidden xl:inline-flex items-center gap-2 absolute top-[36%] -right-56 z-30 pointer-events-none select-none rotate-2">
+        <div className="hidden lg:inline-flex items-center gap-2 absolute top-[36%] -right-36 xl:-right-56 z-30 pointer-events-none select-none rotate-2">
           {/* Blue Arrow ⬅ pointing into frame */}
           <svg className="w-9 h-5 text-[#1d4ed8] select-none mr-1" viewBox="0 0 40 20" fill="none" stroke="currentColor">
             <path d="M 37 10 C 26 5, 16 15, 4 10" strokeWidth="2" strokeLinecap="round" />
@@ -425,23 +426,23 @@ export default function VideoDemoSection() {
         {/* ------------------------------------------------------------- */}
         {/* 5. BOTTOM-LEFT: 🔒 AES-256 zero-knowledge ↗                   */}
         {/* ------------------------------------------------------------- */}
-        <div className="hidden sm:inline-flex items-center gap-2 absolute -bottom-10 left-2 md:left-8 z-30 pointer-events-none select-none -rotate-2">
+        <div className="inline-flex items-center gap-1 sm:gap-2 absolute bottom-0 sm:-bottom-3 left-1 sm:left-8 z-30 pointer-events-none select-none -rotate-2">
           {/* Purple Color Pencil Padlock 🔒 */}
-          <svg className="w-6 h-6 text-[#6b21a8]" viewBox="0 0 28 28" fill="none" stroke="currentColor">
+          <svg className="w-3.5 h-3.5 sm:w-6 sm:h-6 text-[#6b21a8]" viewBox="0 0 28 28" fill="none" stroke="currentColor">
             <rect x="5" y="11" width="18" height="14" rx="2.5" fill="#f3e8ff" fillOpacity="0.5" stroke="#6b21a8" strokeWidth="2" strokeLinecap="round" />
             <path d="M 9 11 L 9 7 C 9 4, 11 3, 14 3 C 17 3, 19 4, 19 7 L 19 11" stroke="#6b21a8" strokeWidth="2" strokeLinecap="round" />
             <circle cx="14" cy="17" r="1.8" fill="#7c3aed" />
           </svg>
 
           <span 
-            className="text-xl sm:text-2xl text-[#6b21a8] font-bold tracking-wide select-none leading-none"
+            className="text-xs xs:text-sm sm:text-2xl text-[#6b21a8] font-bold tracking-wide select-none leading-none"
             style={{ fontFamily: "'Caveat', cursive" }}
           >
             AES-256 zero-knowledge
           </span>
 
           {/* Curved Purple Arrow ↗ pointing up into frame */}
-          <svg className="w-8 h-6 text-[#6b21a8] select-none ml-0.5" viewBox="0 0 35 25" fill="none" stroke="currentColor">
+          <svg className="w-4 h-3 sm:w-8 sm:h-6 text-[#6b21a8] select-none ml-0.5" viewBox="0 0 35 25" fill="none" stroke="currentColor">
             <path d="M 3 20 C 14 20, 22 14, 30 4" strokeWidth="2" strokeLinecap="round" />
             <path d="M 22 4 L 30 4 L 29 13" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -450,22 +451,22 @@ export default function VideoDemoSection() {
         {/* ------------------------------------------------------------- */}
         {/* 6. BOTTOM-RIGHT: ↖ 1-click disaster recovery ♡                */}
         {/* ------------------------------------------------------------- */}
-        <div className="hidden sm:inline-flex items-center gap-2 absolute -bottom-10 right-2 md:right-8 z-30 pointer-events-none select-none rotate-2">
+        <div className="inline-flex items-center gap-1 sm:gap-2 absolute bottom-0 sm:-bottom-3 right-1 sm:right-8 z-30 pointer-events-none select-none rotate-2">
           {/* Curved Red Arrow ↖ pointing up into frame */}
-          <svg className="w-8 h-6 text-[#b91c1c] select-none mr-0.5" viewBox="0 0 35 25" fill="none" stroke="currentColor">
+          <svg className="w-4 h-3 sm:w-8 sm:h-6 text-[#b91c1c] select-none mr-0.5" viewBox="0 0 35 25" fill="none" stroke="currentColor">
             <path d="M 32 20 C 21 20, 13 14, 5 4" strokeWidth="2" strokeLinecap="round" />
             <path d="M 13 4 L 5 4 L 6 13" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
 
           <span 
-            className="text-xl sm:text-2xl text-[#b91c1c] font-bold tracking-wide select-none leading-none"
+            className="text-xs xs:text-sm sm:text-2xl text-[#b91c1c] font-bold tracking-wide select-none leading-none"
             style={{ fontFamily: "'Caveat', cursive" }}
           >
             1-click disaster recovery
           </span>
 
           {/* Hand-Drawn Red Heart Outline ♡ */}
-          <svg className="w-5 h-5 text-[#b91c1c]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#b91c1c]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M 12 21 C 12 21, 3 14, 3 8 C 3 4.5, 6 2, 9 2 C 11 2, 12 3.5, 12 4.5 C 12 3.5, 13 2, 15 2 C 18 2, 21 4.5, 21 8 C 21 14, 12 21, 12 21 Z" fill="#fee2e2" fillOpacity="0.5" />
           </svg>
         </div>
@@ -531,30 +532,30 @@ export default function VideoDemoSection() {
             {/* Buffering Spinner */}
             {isBuffering && (
               <div className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-30 pointer-events-none">
-                <Loader2 className="w-10 h-10 text-[#fef08a] animate-spin" />
+                <Loader2 className="w-8 h-8 sm:w-10 sm:h-10 text-[#fef08a] animate-spin" />
               </div>
             )}
 
             {/* Center Play/Pause Ripple Indicator */}
             {centerAction && (
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-30 animate-ping">
-                <div className="w-16 h-16 rounded-full bg-black/70 text-white flex items-center justify-center border border-white/30">
-                  {centerAction === 'play' ? <Play className="w-8 h-8 fill-white ml-0.5" /> : <Pause className="w-8 h-8 fill-white" />}
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-black/70 text-white flex items-center justify-center border border-white/30">
+                  {centerAction === 'play' ? <Play className="w-6 h-6 sm:w-8 sm:h-8 fill-white ml-0.5" /> : <Pause className="w-6 h-6 sm:w-8 sm:h-8 fill-white" />}
                 </div>
               </div>
             )}
 
-            {/* Big Center Play Button Overlay (when paused) */}
+            {/* Center Play Button Overlay (when paused) */}
             {!isPlaying && !isBuffering && !centerAction && (
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/15 backdrop-blur-[1px] z-30 pointer-events-none gap-2">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#fde047] text-[#0f172a] border-3 border-[#0f172a] shadow-[4px_4px_0px_#0f172a] flex items-center justify-center pl-1 transform transition-transform hover:scale-105">
-                  <Play className="w-8 h-8 sm:w-10 sm:h-10 fill-[#0f172a]" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 backdrop-blur-[1px] z-30 pointer-events-none gap-1 sm:gap-2">
+                <div className="w-12 h-12 sm:w-18 sm:h-18 rounded-full bg-[#fde047] text-[#0f172a] border-2 sm:border-3 border-[#0f172a] shadow-[3px_3px_0px_#0f172a] sm:shadow-[4px_4px_0px_#0f172a] flex items-center justify-center pl-1 transform transition-transform hover:scale-105">
+                  <Play className="w-6 h-6 sm:w-9 sm:h-9 fill-[#0f172a]" />
                 </div>
                 
                 {/* Floating Handwritten prompt */}
-                <div className="flex items-center gap-1.5 -rotate-2 select-none">
+                <div className="flex items-center gap-1 -rotate-1 select-none">
                   <span 
-                    className="text-2xl sm:text-3xl text-white font-bold tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+                    className="text-sm xs:text-base sm:text-2xl lg:text-3xl text-white font-bold tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
                     style={{ fontFamily: "'Caveat', cursive" }}
                   >
                     click to inspect live desktop sync
@@ -565,7 +566,7 @@ export default function VideoDemoSection() {
 
             {/* Minimal Floating Controls Bar */}
             <div
-              className={`absolute bottom-2.5 sm:bottom-3.5 inset-x-2 sm:inset-x-4 p-2 bg-[#0f172a]/90 backdrop-blur-md border border-white/20 rounded-xl transition-opacity duration-200 z-30 ${
+              className={`absolute bottom-1 sm:bottom-2.5 inset-x-1 sm:inset-x-3 p-1 sm:p-2 bg-[#0f172a]/95 backdrop-blur-md border border-white/20 rounded-lg sm:rounded-xl transition-opacity duration-200 z-30 ${
                 showControls || !isPlaying ? 'opacity-100' : 'opacity-0 pointer-events-none'
               }`}
               onClick={(e) => e.stopPropagation()}

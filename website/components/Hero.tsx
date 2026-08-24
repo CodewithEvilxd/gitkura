@@ -112,7 +112,7 @@ export default function Hero() {
                 ))}
               </div>
 
-              {/* Primary Action Button */}
+              {/* Primary Action Button Bar */}
               <div className="relative flex flex-wrap items-center justify-center gap-3">
                 <a
                   href="https://github.com/nishantgaurav/gitkura/releases"
@@ -133,17 +133,18 @@ export default function Hero() {
                   <Github className="w-4 h-4 text-pencil-black" />
                   <span>GitHub (MIT)</span>
                 </a>
+              </div>
 
-                {/* Cute Hand-Drawn Static Doodle Arrow without box */}
-                <div className="hidden lg:flex items-center gap-2 absolute -right-36 top-2 select-none pointer-events-none">
-                  <svg className="w-8 h-8 text-[#0284c7]" viewBox="0 0 36 36" fill="none" stroke="currentColor">
-                    <path d="M 30 8 C 20 6, 8 14, 8 28" strokeWidth="2.2" strokeLinecap="round" />
-                    <path d="M 16 24 L 8 28 L 6 18" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  <span className="font-caveat font-bold text-xl text-sky-800 rotate-2">
-                    one-click setup!
-                  </span>
-                </div>
+              {/* Cute Hand-Drawn Static Doodle Arrow written BELOW buttons pointing upward */}
+              <div className="flex items-center justify-center gap-1.5 select-none pointer-events-none -rotate-1 -mt-0.5">
+                <span className="font-caveat font-bold text-base sm:text-xl text-sky-800 rotate-1 whitespace-nowrap">
+                  one-click setup!
+                </span>
+                {/* Curved hand-drawn arrow ⤴ pointing straight up into button */}
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#0284c7] select-none flex-shrink-0" viewBox="0 0 28 28" fill="none" stroke="currentColor">
+                  <path d="M 6 22 C 14 22, 16 14, 16 6" strokeWidth="2.4" strokeLinecap="round" />
+                  <path d="M 10 12 L 16 6 L 22 12" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </div>
 
               {/* Handwritten Cute Annotation Caption */}

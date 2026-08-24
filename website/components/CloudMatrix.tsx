@@ -132,7 +132,7 @@ export default function CloudMatrix() {
   const Icon = current.icon
 
   return (
-    <section id="cloud" className="py-16 px-4 sm:px-8 max-w-7xl mx-auto">
+    <section id="cloud" className="pt-6 pb-16 sm:py-16 px-4 sm:px-8 max-w-7xl mx-auto select-none">
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto space-y-3 mb-10">
         <div className="inline-flex items-center gap-2 px-4 py-1 bg-emerald-50/90 border-2 border-pencil-black shadow-scribely-sm rounded-full -rotate-1">
@@ -170,8 +170,8 @@ export default function CloudMatrix() {
         </svg>
       </div>
 
-      {/* Grid of 6 Cloud Target Selector Tabs */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 max-w-6xl mx-auto mb-8">
+      {/* Grid of 6 Cloud Target Selector Tabs (Horizontally Swipeable on Mobile, Grid on Tablet/Desktop) */}
+      <div className="flex overflow-x-auto snap-x snap-mandatory sm:grid sm:grid-cols-3 lg:grid-cols-6 gap-3 max-w-6xl mx-auto mb-8 no-scrollbar py-2 -mx-2 px-2 sm:mx-auto sm:px-0 touch-pan-x">
         {cloudTargets.map((target) => {
           const isSelected = target.id === activeTarget
           const TargetIcon = target.icon
@@ -180,7 +180,7 @@ export default function CloudMatrix() {
               key={target.id}
               type="button"
               onClick={() => setActiveTarget(target.id)}
-              className={`p-3.5 rounded-2xl border-2 transition-all text-left flex flex-col justify-between min-h-[110px] cursor-pointer ${
+              className={`w-[145px] sm:w-auto flex-shrink-0 snap-start p-3.5 rounded-2xl border-2 transition-all text-left flex flex-col justify-between min-h-[110px] cursor-pointer ${
                 isSelected
                   ? 'bg-highlighter-yellow border-pencil-black shadow-scribely'
                   : 'bg-white border-pencil-black/25 hover:border-pencil-black hover:bg-[#faf8f5]'

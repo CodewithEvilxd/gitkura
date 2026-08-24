@@ -78,12 +78,12 @@ export default function GitEngineDemo() {
 
             {/* Slider 2: Changed Delta % */}
             <div className="space-y-2 relative">
-              {/* Cute Interactive Pointer without box */}
-              <div className="hidden sm:inline-flex items-center gap-1.5 absolute -top-7 right-0 rotate-3 select-none pointer-events-none">
-                <span className="font-caveat font-bold text-lg text-emerald-800">
+              {/* Cute Interactive Pointer */}
+              <div className="inline-flex items-center gap-1 sm:gap-1.5 absolute -top-6 sm:-top-7 right-0 rotate-3 select-none pointer-events-none">
+                <span className="font-caveat font-bold text-sm sm:text-lg text-emerald-800">
                   try sliding this!
                 </span>
-                <svg className="w-5 h-5 text-emerald-700" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-700" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path d="M 4 4 Q 14 16 16 16" strokeWidth="2" strokeLinecap="round" />
                   <path d="M 10 14 L 16 16 L 14 22" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

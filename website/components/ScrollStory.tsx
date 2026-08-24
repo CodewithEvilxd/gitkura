@@ -31,7 +31,7 @@ interface StoryScene {
 const scenes: StoryScene[] = [
   {
     id: 1,
-    badge: 'ACT 01 &bull; THE CLOUD FRAGILITY TRAP',
+    badge: 'ACT 01 • THE CLOUD FRAGILITY TRAP',
     title: 'The Single-Point-of-Failure Risk',
     subtitle: 'Relying 100% on a single cloud vendor leaves your engineering team exposed.',
     problemTitle: 'The Real Threat:',
@@ -48,7 +48,7 @@ const scenes: StoryScene[] = [
   },
   {
     id: 2,
-    badge: 'ACT 02 &bull; DIFFERENTIAL GIT MIRRORING',
+    badge: 'ACT 02 • DIFFERENTIAL GIT MIRRORING',
     title: 'Smart Incremental Synchronization',
     subtitle: 'Mirror all remote branches and commits without burning bandwidth.',
     problemTitle: 'Why Naive Clones Fail:',
@@ -65,7 +65,7 @@ const scenes: StoryScene[] = [
   },
   {
     id: 3,
-    badge: 'ACT 03 &bull; POINT-IN-TIME ARCHIVES',
+    badge: 'ACT 03 • POINT-IN-TIME ARCHIVES',
     title: 'Atomic Snapshot Packaging',
     subtitle: 'Clean, standalone compressed archives with atomic rename integrity guards.',
     problemTitle: 'The Silent Corruption Danger:',
@@ -82,7 +82,7 @@ const scenes: StoryScene[] = [
   },
   {
     id: 4,
-    badge: 'ACT 04 &bull; MULTI-DESTINATION REPLICATION',
+    badge: 'ACT 04 • MULTI-DESTINATION REPLICATION',
     title: 'Zero-Egress Multi-Cloud Dispatch',
     subtitle: 'Broadcast snapshots across private Telegram channels, Google Drive, AWS S3, and MinIO.',
     problemTitle: 'Local-Only Storage Risk:',
@@ -101,38 +101,15 @@ const scenes: StoryScene[] = [
 
 export default function ScrollStory() {
   const [activeScene, setActiveScene] = useState(0)
-  const [scrollProgress, setScrollProgress] = useState(0)
-  const containerRef = useRef<HTMLDivElement>(null)
   const sceneCardRef = useRef<HTMLDivElement>(null)
-
-  // lets-scroll sticky scrub listener
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return
-      const rect = containerRef.current.getBoundingClientRect()
-      const totalScrollable = rect.height - window.innerHeight
-      if (totalScrollable <= 0) return
-
-      const progress = Math.min(Math.max(-rect.top / totalScrollable, 0), 1)
-      setScrollProgress(Math.round(progress * 100))
-
-      const targetScene = Math.min(Math.floor(progress * scenes.length), scenes.length - 1)
-      if (targetScene !== activeScene) {
-        setActiveScene(targetScene)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [activeScene])
 
   useEffect(() => {
     if (sceneCardRef.current) {
       anime({
         targets: sceneCardRef.current,
         opacity: [0.5, 1],
-        translateY: [10, 0],
-        duration: 350,
+        translateY: [8, 0],
+        duration: 300,
         easing: 'easeOutQuad',
       })
     }
@@ -140,17 +117,17 @@ export default function ScrollStory() {
 
   const current = scenes[activeScene]
   const Icon = current.icon
+  const progressPercent = Math.round(((activeScene + 1) / scenes.length) * 100)
 
   return (
-    <section ref={containerRef} id="story" className="relative min-h-[220vh] py-16 px-4 sm:px-8">
-      {/* Sticky Viewport Stage (lets-scroll pinned camera) */}
-      <div className="sticky top-20 max-w-7xl mx-auto space-y-8">
+    <section id="story" className="py-12 md:py-16 px-4 sm:px-8 max-w-7xl mx-auto select-none">
+      <div className="space-y-6 md:space-y-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-4 py-1 bg-indigo-50/90 border-2 border-pencil-black shadow-scribely-sm rounded-full -rotate-1">
             <span className="w-2.5 h-2.5 rounded-full bg-ink-blue animate-pulse" />
             <span className="font-caveat font-bold text-lg text-indigo-950">
-              the gitkura chronicles &bull; 4-act journey
+              the gitkura chronicles • 4-act journey
             </span>
           </div>
 
@@ -169,19 +146,19 @@ export default function ScrollStory() {
             </span>
           </h2>
           <p className="font-patrick text-xl text-[#64748b] font-medium">
-            Scroll down to explore the 4-act journey from single-cloud vulnerability to complete code sovereignty.
+            Explore the 4-act journey from single-cloud vulnerability to complete code sovereignty.
           </p>
 
           {/* Timeline Gauge */}
           <div className="max-w-md mx-auto pt-2">
             <div className="flex justify-between text-[11px] font-mono font-bold text-ink-blue mb-1">
               <span>Timeline Progress:</span>
-              <span>Act 0{activeScene + 1} of 04 ({scrollProgress}%)</span>
+              <span>Act 0{activeScene + 1} of 04 ({progressPercent}%)</span>
             </div>
             <div className="h-2 bg-white rounded-full border-2 border-pencil-black overflow-hidden shadow-2xs">
               <div
-                className="h-full bg-highlighter-yellow transition-all duration-150"
-                style={{ width: `${scrollProgress}%` }}
+                className="h-full bg-highlighter-yellow transition-all duration-300"
+                style={{ width: `${progressPercent}%` }}
               />
             </div>
           </div>
