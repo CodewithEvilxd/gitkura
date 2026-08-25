@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   title: 'GitKura (Git蔵) • Disaster-Proof Git Repository Vault & Multi-Cloud Replication Engine',
   description:
     'Air-gapped local vault, differential git synchronization, and automated snapshot replication across Telegram Channels, Google Drive, AWS S3, Cloudflare R2, and MinIO. Zero telemetry, AES-256 encrypted on disk.',
-  authors: [{ name: 'Nishant Gaurav', url: 'https://github.com/nishantgaurav' }],
+  authors: [{ name: 'Nishant Gaurav', url: 'https://github.com/CodewithEvilxd' }],
   icons: {
     icon: '/favicon.ico',
     apple: '/icon-256.png',

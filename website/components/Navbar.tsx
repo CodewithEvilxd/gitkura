@@ -73,7 +73,7 @@ export default function Navbar() {
 
         {/* Action CTAs: Brutalist Button */}
         <div className="hidden sm:flex items-center gap-3">
-          <BrutalistButton href="https://github.com/nishantgaurav/gitkura" />
+          <BrutalistButton href="https://github.com/CodewithEvilxd/gitkura" />
         </div>
 
         {/* Mobile Hamburger Toggle */}
@@ -102,7 +102,7 @@ export default function Navbar() {
           ))}
           <div className="pt-2 border-t-2 border-dashed border-pencil-black/20">
             <a
-              href="https://github.com/nishantgaurav/gitkura"
+              href="https://github.com/CodewithEvilxd/gitkura"
               target="_blank"
               rel="noreferrer"
               onClick={() => setMobileMenuOpen(false)}

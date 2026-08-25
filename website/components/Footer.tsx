@@ -43,7 +43,7 @@ export default function Footer() {
         {/* Right: GitHub & Back to Top */}
         <div className="flex items-center gap-3">
           <a
-            href="https://github.com/nishantgaurav/gitkura"
+            href="https://github.com/CodewithEvilxd/gitkura"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-1.5 text-[#475569] hover:text-ink-blue font-bold transition-colors"

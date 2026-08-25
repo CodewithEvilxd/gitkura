@@ -17,34 +17,37 @@ import {
 export default function DownloadPage() {
   const releases = [
     {
-      os: 'Windows 10 / 11',
+      os: 'Windows 10 / 11 (64-bit)',
       version: 'v1.1.0',
       badge: 'Recommended',
-      installerName: 'GitKura-Setup-1.1.0.exe',
-      portableName: 'GitKura-Portable-1.1.0.exe',
-      size: '84.2 MB',
-      arch: 'x64 / ARM64',
-      downloadUrl: 'https://github.com/nishantgaurav/gitkura/releases',
+      installerName: 'GitKura.Setup.1.1.0.exe',
+      portableName: 'GitKura.1.1.0.exe',
+      size: '100 MB',
+      arch: 'x64',
+      downloadUrl: 'https://github.com/CodewithEvilxd/gitkura/releases/download/v1.1.0/GitKura.Setup.1.1.0.exe',
+      portableUrl: 'https://github.com/CodewithEvilxd/gitkura/releases/download/v1.1.0/GitKura.1.1.0.exe',
     },
     {
       os: 'macOS (Apple Silicon & Intel)',
       version: 'v1.1.0',
       badge: 'Universal Binary',
-      installerName: 'GitKura-1.1.0-universal.dmg',
-      portableName: 'GitKura-macOS.zip',
-      size: '88.5 MB',
-      arch: 'M1 / M2 / M3 & Intel x64',
-      downloadUrl: 'https://github.com/nishantgaurav/gitkura/releases',
+      installerName: 'GitKura-1.1.0-arm64.dmg',
+      portableName: 'Source code (zip)',
+      size: '117 MB',
+      arch: 'ARM64 (M1/M2/M3/M4)',
+      downloadUrl: 'https://github.com/CodewithEvilxd/gitkura/releases/download/v1.1.0/GitKura-1.1.0-arm64.dmg',
+      portableUrl: 'https://github.com/CodewithEvilxd/gitkura/archive/refs/tags/v1.1.0.zip',
     },
     {
       os: 'Linux (Ubuntu, Debian, Fedora, Arch)',
       version: 'v1.1.0',
-      badge: 'AppImage & DEB',
+      badge: 'AppImage Standalone',
       installerName: 'GitKura-1.1.0.AppImage',
-      portableName: 'gitkura_1.1.0_amd64.deb',
-      size: '79.1 MB',
-      arch: 'x86_64 / aarch64',
-      downloadUrl: 'https://github.com/nishantgaurav/gitkura/releases',
+      portableName: 'Source code (tar.gz)',
+      size: '123 MB',
+      arch: 'x86_64',
+      downloadUrl: 'https://github.com/CodewithEvilxd/gitkura/releases/download/v1.1.0/GitKura-1.1.0.AppImage',
+      portableUrl: 'https://github.com/CodewithEvilxd/gitkura/archive/refs/tags/v1.1.0.tar.gz',
     },
   ]
 
@@ -105,14 +108,30 @@ export default function DownloadPage() {
                 </div>
 
                 <div className="space-y-2 pt-2 text-xs font-mono">
-                  <div className="p-3 bg-[#fdfbf7] rounded-xl border border-pencil-black">
-                    <span className="text-[#64748b] block text-[10px]">Primary Package:</span>
-                    <span className="font-bold text-ink-blue">{rel.installerName}</span>
-                  </div>
-                  <div className="p-3 bg-[#fdfbf7] rounded-xl border border-pencil-black">
-                    <span className="text-[#64748b] block text-[10px]">Portable Package:</span>
-                    <span className="font-bold text-ink-blue">{rel.portableName}</span>
-                  </div>
+                  <a
+                    href={rel.downloadUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-3 bg-[#fdfbf7] hover:bg-yellow-50/60 rounded-xl border border-pencil-black flex items-center justify-between group transition-colors cursor-pointer"
+                  >
+                    <div>
+                      <span className="text-[#64748b] block text-[10px]">Primary Installer:</span>
+                      <span className="font-bold text-ink-blue group-hover:underline">{rel.installerName}</span>
+                    </div>
+                    <Download className="w-3.5 h-3.5 text-ink-blue shrink-0" />
+                  </a>
+                  <a
+                    href={rel.portableUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-3 bg-[#fdfbf7] hover:bg-yellow-50/60 rounded-xl border border-pencil-black flex items-center justify-between group transition-colors cursor-pointer"
+                  >
+                    <div>
+                      <span className="text-[#64748b] block text-[10px]">Standalone / Archive:</span>
+                      <span className="font-bold text-ink-blue group-hover:underline">{rel.portableName}</span>
+                    </div>
+                    <Download className="w-3.5 h-3.5 text-ink-blue shrink-0" />
+                  </a>
                 </div>
               </div>
 

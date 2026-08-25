@@ -87,7 +87,7 @@ export default function DocsPage() {
             <div className="bg-[#1e293b] rounded-2xl p-5 border-2 border-pencil-black font-mono text-xs text-slate-200 shadow-inner">
               <pre className="text-slate-300 leading-relaxed whitespace-pre">
 {`# 1. Clone repository from GitHub
-git clone https://github.com/nishantgaurav/gitkura.git
+git clone https://github.com/CodewithEvilxd/gitkura.git
 cd gitkura
 
 # 2. Install dependencies

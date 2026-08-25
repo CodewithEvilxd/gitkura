@@ -7,7 +7,7 @@ interface BrutalistButtonProps {
 }
 
 export default function BrutalistButton({
-  href = 'https://github.com/nishantgaurav/gitkura',
+  href = 'https://github.com/CodewithEvilxd/gitkura',
 }: BrutalistButtonProps) {
   return (
     <a

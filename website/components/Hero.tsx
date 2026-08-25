@@ -32,24 +32,27 @@ export default function Hero() {
 
   const osConfig = {
     win: {
-      name: 'Windows 10 / 11',
-      file: 'GitKura-Setup-1.1.0.exe',
-      format: '64-bit Installer & Portable .exe',
-      size: '84 MB',
+      name: 'Windows (64-bit)',
+      file: 'GitKura.Setup.1.1.0.exe',
+      url: 'https://github.com/CodewithEvilxd/gitkura/releases/download/v1.1.0/GitKura.Setup.1.1.0.exe',
+      format: 'Setup Installer & Portable .exe',
+      size: '100 MB',
       badge: 'Windows .exe',
     },
     mac: {
-      name: 'macOS (Universal)',
-      file: 'GitKura-1.1.0-universal.dmg',
-      format: 'Apple Silicon (M1/M2/M3) & Intel',
-      size: '88 MB',
+      name: 'macOS (Apple Silicon & Intel)',
+      file: 'GitKura-1.1.0-arm64.dmg',
+      url: 'https://github.com/CodewithEvilxd/gitkura/releases/download/v1.1.0/GitKura-1.1.0-arm64.dmg',
+      format: 'Apple Silicon (M1/M2/M3/M4) & Intel',
+      size: '117 MB',
       badge: 'macOS .dmg',
     },
     linux: {
       name: 'Linux (x86_64)',
       file: 'GitKura-1.1.0.AppImage',
-      format: 'AppImage & Debian .deb',
-      size: '79 MB',
+      url: 'https://github.com/CodewithEvilxd/gitkura/releases/download/v1.1.0/GitKura-1.1.0.AppImage',
+      format: 'AppImage Standalone',
+      size: '123 MB',
       badge: 'Linux AppImage',
     },
   }
@@ -115,7 +118,7 @@ export default function Hero() {
               {/* Primary Action Button Bar */}
               <div className="relative flex flex-wrap items-center justify-center gap-3">
                 <a
-                  href="https://github.com/nishantgaurav/gitkura/releases"
+                  href={current.url}
                   target="_blank"
                   rel="noreferrer"
                   className="px-8 py-3.5 bg-ink-blue hover:bg-ink-hover text-white scribely-btn rounded-2xl text-sm sm:text-base font-black font-display flex items-center gap-2.5 cursor-pointer shadow-scribely"
@@ -125,7 +128,7 @@ export default function Hero() {
                 </a>
 
                 <a
-                  href="https://github.com/nishantgaurav/gitkura"
+                  href="https://github.com/CodewithEvilxd/gitkura"
                   target="_blank"
                   rel="noreferrer"
                   className="px-5 py-3.5 bg-white hover:bg-[#faf8f5] text-pencil-black scribely-btn rounded-2xl text-xs sm:text-sm font-bold font-display flex items-center gap-2 cursor-pointer"
