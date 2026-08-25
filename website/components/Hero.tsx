@@ -61,8 +61,8 @@ export default function Hero() {
       {/* Background Decorative Paper Accent Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-highlighter-yellow/15 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      {/* Interactive Cursor Trail of Hand-Drawn Stickers (Full screen width, zero clipping, triggers in Side Zones 1 & 2) */}
-      <PixelatedImageTrail
+      {/* Interactive Cursor Trail of Hand-Drawn Stickers (Temporarily commented out) */}
+      {/* <PixelatedImageTrail
         imageSize={125}
         slices={5}
         smoothing={0.35}
@@ -76,7 +76,7 @@ export default function Hero() {
           outDuration: 520,
           slideDuration: 1100,
         }}
-      />
+      /> */}
 
       <div className="px-4 sm:px-8 max-w-7xl mx-auto relative overflow-visible z-10">
         {/* ========================================================================= */}
@@ -133,10 +133,21 @@ export default function Hero() {
                   <Github className="w-4 h-4 text-pencil-black" />
                   <span>GitHub (MIT)</span>
                 </a>
+
+                {/* Desktop Callout: placed to the right of the GitHub button (original desktop layout) */}
+                <div className="hidden lg:flex items-center gap-2 absolute -right-36 top-2 select-none pointer-events-none">
+                  <svg className="w-8 h-8 text-[#0284c7]" viewBox="0 0 36 36" fill="none" stroke="currentColor">
+                    <path d="M 30 8 C 20 6, 8 14, 8 28" strokeWidth="2.2" strokeLinecap="round" />
+                    <path d="M 16 24 L 8 28 L 6 18" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span className="font-caveat font-bold text-xl text-sky-800 rotate-2 whitespace-nowrap">
+                    one-click setup!
+                  </span>
+                </div>
               </div>
 
-              {/* Cute Hand-Drawn Static Doodle Arrow written BELOW buttons pointing upward */}
-              <div className="flex items-center justify-center gap-1.5 select-none pointer-events-none -rotate-1 -mt-0.5">
+              {/* Mobile Callout: placed BELOW buttons on mobile/tablet screens only */}
+              <div className="lg:hidden flex items-center justify-center gap-1.5 select-none pointer-events-none -rotate-1 -mt-0.5">
                 <span className="font-caveat font-bold text-base sm:text-xl text-sky-800 rotate-1 whitespace-nowrap">
                   one-click setup!
                 </span>

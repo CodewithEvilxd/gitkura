@@ -101,19 +101,68 @@ export default function DisasterRecovery() {
         </p>
       </div>
 
-      {/* 3 Scenario Cards - Swipeable on mobile, Grid on desktop */}
+      {/* Desktop Grid Layout (Clean 3-col grid, perfectly centered with max-w-6xl mx-auto) */}
+      <div className="hidden md:grid md:grid-cols-3 gap-6 max-w-6xl mx-auto w-full">
+        {recoveryScenarios.map((scenario) => {
+          const Icon = scenario.icon
+          return (
+            <div
+              key={`desktop-${scenario.id}`}
+              className="scribely-card p-6 sm:p-8 bg-white shadow-scribely-lg relative flex flex-col justify-between"
+            >
+              <WashiTape variant={scenario.tapeVariant} className="-top-3 left-8" />
+
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-2xl bg-[#faf8f5] border-2 border-pencil-black shadow-scribely-sm flex items-center justify-center text-ink-blue">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <span className="text-[10px] font-mono font-bold bg-[#faf8f5] text-ink-blue px-2.5 py-1 rounded-lg border border-pencil-black">
+                    {scenario.badge}
+                  </span>
+                </div>
+
+                <h3 className="text-xl font-black font-display text-ink-blue leading-snug">
+                  {scenario.title}
+                </h3>
+
+                <div className="p-3.5 bg-[#fff7ed] rounded-xl border border-pencil-black/20 text-xs">
+                  <span className="font-bold text-[#c2410c] block mb-1">When this happens:</span>
+                  <p className="text-[#7c2d12] font-sans leading-relaxed">{scenario.problem}</p>
+                </div>
+
+                <div className="space-y-1">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#64748b]">
+                    How GitKura Resolves It:
+                  </span>
+                  <p className="font-kalam text-sm text-[#475569] leading-relaxed font-bold">
+                    {scenario.solution}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-3 border-t-2 border-dashed border-pencil-black/15 flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#15803d] flex-shrink-0" />
+                <span className="font-gaegu text-base font-bold text-[#15803d]">{scenario.benefit}</span>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+
+      {/* Mobile Swipeable Carousel Layout */}
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex md:grid md:grid-cols-3 gap-5 md:gap-6 max-w-6xl mx-auto overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-4 pb-4 px-2 md:px-0 -mx-2 md:mx-0 no-scrollbar overscroll-x-contain touch-pan-y touch-pan-x"
+        className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 pt-4 pb-4 px-2 no-scrollbar overscroll-x-contain touch-pan-y touch-pan-x w-full"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
         {recoveryScenarios.map((scenario) => {
           const Icon = scenario.icon
           return (
             <div
-              key={scenario.id}
-              className="w-[84vw] max-w-[340px] md:w-auto flex-shrink-0 snap-center scribely-card p-6 sm:p-8 bg-white shadow-scribely-lg relative flex flex-col justify-between"
+              key={`mobile-${scenario.id}`}
+              className="w-[84vw] max-w-[340px] flex-shrink-0 snap-center scribely-card p-6 sm:p-8 bg-white shadow-scribely-lg relative flex flex-col justify-between"
             >
               <WashiTape variant={scenario.tapeVariant} className="-top-3 left-8" />
 

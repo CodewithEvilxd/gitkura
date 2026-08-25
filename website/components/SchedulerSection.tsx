@@ -102,19 +102,63 @@ export default function SchedulerSection() {
         </p>
       </div>
 
-      {/* 4 Background Features - Swipeable on mobile, Grid on desktop */}
+      {/* Desktop Grid Layout (Clean 2x2 grid, perfectly centered with max-w-5xl mx-auto) */}
+      <div className="hidden md:grid md:grid-cols-2 gap-6 max-w-5xl mx-auto w-full">
+        {daemonFeatures.map((feat, idx) => {
+          const Icon = feat.icon
+          return (
+            <div
+              key={`desktop-${idx}`}
+              className="scribely-card p-6 sm:p-8 bg-white shadow-scribely-lg relative flex flex-col justify-between"
+            >
+              <WashiTape variant={feat.tapeVariant} className="-top-3 right-8" />
+
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-2xl bg-[#faf8f5] border-2 border-pencil-black shadow-scribely-sm flex items-center justify-center text-ink-blue">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <span className="text-[11px] font-gaegu font-bold bg-[#faf8f5] text-ink-blue px-2.5 py-1 rounded-lg border border-pencil-black">
+                    {feat.badge}
+                  </span>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-black font-display text-ink-blue">
+                    {feat.title}
+                  </h3>
+                  <p className="font-architects text-xs font-bold text-[#64748b] mt-0.5">
+                    {feat.subtitle}
+                  </p>
+                </div>
+
+                <p className="font-patrick text-sm text-[#475569] leading-relaxed font-medium">
+                  {feat.description}
+                </p>
+              </div>
+
+              <div className="mt-4 pt-3 border-t-2 border-dashed border-pencil-black/15 flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#15803d] flex-shrink-0" />
+                <span className="font-gaegu text-base font-bold text-[#15803d]">Zero configuration required after initial setup</span>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+
+      {/* Mobile Swipeable Carousel Layout */}
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex md:grid md:grid-cols-2 gap-5 md:gap-6 max-w-5xl mx-auto overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-4 pb-4 px-2 md:px-0 -mx-2 md:mx-0 no-scrollbar overscroll-x-contain touch-pan-y touch-pan-x"
+        className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 pt-4 pb-4 px-2 no-scrollbar overscroll-x-contain touch-pan-y touch-pan-x w-full"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
         {daemonFeatures.map((feat, idx) => {
           const Icon = feat.icon
           return (
             <div
-              key={idx}
-              className="w-[84vw] max-w-[340px] md:w-auto flex-shrink-0 snap-center scribely-card p-6 sm:p-8 bg-white shadow-scribely-lg relative flex flex-col justify-between"
+              key={`mobile-${idx}`}
+              className="w-[84vw] max-w-[340px] flex-shrink-0 snap-center scribely-card p-6 sm:p-8 bg-white shadow-scribely-lg relative flex flex-col justify-between"
             >
               <WashiTape variant={feat.tapeVariant} className="-top-3 right-8" />
 

@@ -41,14 +41,14 @@ export default function InteractiveFeatureCards() {
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex md:grid md:grid-cols-3 gap-5 md:gap-6 items-stretch overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-6 pb-4 px-2 md:px-0 -mx-2 md:mx-0 no-scrollbar overscroll-x-contain touch-pan-y touch-pan-x"
+        className="flex md:grid md:grid-cols-3 gap-5 md:gap-6 items-stretch max-w-6xl md:mx-auto overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-6 pb-4 px-2 md:px-0 no-scrollbar overscroll-x-contain touch-pan-y touch-pan-x w-full"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
         
         {/* =================================================================== */}
         {/* CARD 01: FULL RAW GIT TREES (LOCAL MIRROR)                          */}
         {/* =================================================================== */}
-        <div className="w-[84vw] max-w-[340px] md:w-auto flex-shrink-0 snap-center relative bg-white border-2 border-pencil-black rounded-2xl p-5 shadow-[4px_4px_0px_#17365D] flex flex-col justify-between select-none">
+        <div className="w-[84vw] max-w-[340px] md:w-full md:max-w-none flex-shrink-0 md:flex-shrink snap-center md:snap-align-none relative bg-white border-2 border-pencil-black rounded-2xl p-5 shadow-[4px_4px_0px_#17365D] flex flex-col justify-between select-none">
           {/* Top Washi Tape */}
           <WashiTape variant="yellow" className="-top-2.5 left-8 shadow-xs scale-90" />
 
@@ -113,9 +113,9 @@ export default function InteractiveFeatureCards() {
         </div>
 
         {/* =================================================================== */}
-        {/* CARD 02: DIFFERENTIAL ENGINE (DELTA SYNC)                            */}
+        {/* CARD 02: 2-SECOND DELTA ENGINE (DIFF ENGINE)                        */}
         {/* =================================================================== */}
-        <div className="w-[84vw] max-w-[340px] md:w-auto flex-shrink-0 snap-center relative bg-white border-2 border-pencil-black rounded-2xl p-5 shadow-[4px_4px_0px_#17365D] flex flex-col justify-between select-none">
+        <div className="w-[84vw] max-w-[340px] md:w-full md:max-w-none flex-shrink-0 md:flex-shrink snap-center md:snap-align-none relative bg-white border-2 border-pencil-black rounded-2xl p-5 shadow-[4px_4px_0px_#17365D] flex flex-col justify-between select-none">
           {/* Top Washi Tape */}
           <WashiTape variant="green" className="-top-2.5 left-8 shadow-xs scale-90" />
 
@@ -182,7 +182,7 @@ export default function InteractiveFeatureCards() {
         {/* =================================================================== */}
         {/* CARD 03: ENCRYPTED SNAPSHOTS (CLOUD DISPATCH)                       */}
         {/* =================================================================== */}
-        <div className="w-[84vw] max-w-[340px] md:w-auto flex-shrink-0 snap-center relative bg-white border-2 border-pencil-black rounded-2xl p-5 shadow-[4px_4px_0px_#17365D] flex flex-col justify-between select-none">
+        <div className="w-[84vw] max-w-[340px] md:w-full md:max-w-none flex-shrink-0 md:flex-shrink snap-center md:snap-align-none relative bg-white border-2 border-pencil-black rounded-2xl p-5 shadow-[4px_4px_0px_#17365D] flex flex-col justify-between select-none">
           {/* Top Washi Tape */}
           <WashiTape variant="blue" className="-top-2.5 left-8 shadow-xs scale-90" />
 
