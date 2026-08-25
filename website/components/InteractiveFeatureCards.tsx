@@ -41,7 +41,7 @@ export default function InteractiveFeatureCards() {
       <div
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex md:grid md:grid-cols-3 gap-5 md:gap-6 items-stretch overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-6 pb-4 px-2 md:px-0 -mx-2 md:mx-0 no-scrollbar touch-pan-x"
+        className="flex md:grid md:grid-cols-3 gap-5 md:gap-6 items-stretch overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-6 pb-4 px-2 md:px-0 -mx-2 md:mx-0 no-scrollbar overscroll-x-contain touch-pan-y touch-pan-x"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
         

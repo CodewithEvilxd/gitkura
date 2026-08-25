@@ -496,7 +496,6 @@ export default function VideoDemoSection() {
             {/* Live Video Element */}
             <video
               ref={videoRef}
-              src="https://media.githubusercontent.com/media/CodewithEvilxd/gitkura/main/website/public/export-1787519527893.mp4"
               playsInline
               preload="metadata"
               crossOrigin="anonymous"
@@ -511,6 +510,7 @@ export default function VideoDemoSection() {
               }}
               onWaiting={() => setIsBuffering(true)}
               onPlaying={() => setIsBuffering(false)}
+              onCanPlay={() => setIsBuffering(false)}
               onTimeUpdate={() => {
                 const v = videoRef.current
                 if (!v || !v.duration) return
@@ -527,7 +527,11 @@ export default function VideoDemoSection() {
                 setIsPlaying(false)
                 setProgress(100)
               }}
-            />
+            >
+              <source src="/demo-mobile.mp4" media="(max-width: 768px)" type="video/mp4" />
+              <source src="/demo-optimized.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
 
             {/* Buffering Spinner */}
             {isBuffering && (

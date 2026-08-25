@@ -171,7 +171,7 @@ export default function CloudMatrix() {
       </div>
 
       {/* Grid of 6 Cloud Target Selector Tabs (Horizontally Swipeable on Mobile, Grid on Tablet/Desktop) */}
-      <div className="flex overflow-x-auto snap-x snap-mandatory sm:grid sm:grid-cols-3 lg:grid-cols-6 gap-3 max-w-6xl mx-auto mb-8 no-scrollbar py-2 -mx-2 px-2 sm:mx-auto sm:px-0 touch-pan-x">
+      <div className="flex overflow-x-auto snap-x snap-mandatory sm:grid sm:grid-cols-3 lg:grid-cols-6 gap-3 max-w-6xl mx-auto mb-8 no-scrollbar py-2 -mx-2 px-2 sm:mx-auto sm:px-0 overscroll-x-contain touch-pan-y touch-pan-x">
         {cloudTargets.map((target) => {
           const isSelected = target.id === activeTarget
           const TargetIcon = target.icon

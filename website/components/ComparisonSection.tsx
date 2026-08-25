@@ -203,7 +203,7 @@ export default function ComparisonSection() {
         <div
           ref={scrollRef}
           onScroll={handleMobileScroll}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-4 pt-4 pb-4 px-2 no-scrollbar touch-pan-x"
+          className="flex overflow-x-auto snap-x snap-mandatory gap-4 pt-4 pb-4 px-2 no-scrollbar overscroll-x-contain touch-pan-y touch-pan-x"
           style={{ WebkitOverflowScrolling: 'touch' }}
         >
           {comparisonRows.map((row, idx) => (
