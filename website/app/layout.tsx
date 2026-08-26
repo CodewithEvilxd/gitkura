@@ -48,6 +48,7 @@ export const metadata: Metadata = {
 }
 
 import BrushFilterDefs from '@/components/BrushFilterDefs'
+import ImageProtection from '@/components/ImageProtection'
 
 export default function RootLayout({
   children,
@@ -60,6 +61,7 @@ export default function RootLayout({
       className={`${patrickHand.variable} ${caveat.variable} ${architectsDaughter.variable} ${outfit.variable} ${spaceMono.variable}`}
     >
       <body className="bg-paper-off-white text-pencil-black min-h-screen flex flex-col antialiased">
+        <ImageProtection />
         <BrushFilterDefs />
         {children}
       </body>

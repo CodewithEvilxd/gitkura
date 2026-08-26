@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Outfit:wght@600;700;800;900&family=Caveat:wght@400;500;600;700&family=Cabin+Sketch:wght@700&family=Patrick+Hand&family=Gochi+Hand&family=Kalam:wght@400;700&family=Gaegu:wght@400;700&family=Architects+Daughter&family=Permanent+Marker&family=Rock+Salt&family=Caveat+Brush&family=Sedgwick+Ave+Display&family=Shadows+Into+Light+Two&family=Indie+Flower&family=Gloria+Hallelujah&family=Covered+By+Your+Grace&family=Reenie+Beanie&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Outfit:wght@600;700;800;900&family=Caveat:wght@400;500;600;700&family=Cabin+Sketch:wght@700&family=Patrick+Hand&family=Gochi+Hand&family=Kalam:wght@400;700&family=Gaegu:wght@400;700&family=Architects+Daughter&family=Permanent+Marker&family=Rock+Salt&family=Caveat+Brush&family=Sedgwick+Ave+Display&family=Shadows+Into+Light+Two&family=Indie+Flower&family=Gloria+Hallelujah&family=Covered+By+Your+Grace&family=Reenie+Beanie&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Fira+Code:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -20,6 +20,7 @@
   .font-reenie { font-family: 'Reenie Beanie', cursive, sans-serif; }
   .font-covered { font-family: 'Covered By Your Grace', cursive, sans-serif; }
   .font-architects { font-family: 'Architects Daughter', cursive, sans-serif; }
+  .font-code { font-family: 'JetBrains Mono', 'Fira Code', 'Space Mono', monospace; }
 
   /* Authentic Hand-Painted Dry Brush Texture Utility */
   .brush-title {
@@ -86,6 +87,15 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent all image dragging / ghost sliding across the application */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 ::selection {

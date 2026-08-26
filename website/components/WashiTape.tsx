@@ -2,194 +2,332 @@
 
 import React, { useId } from 'react'
 
+export type WashiVariant =
+  | 'yellow'
+  | 'green'
+  | 'blue'
+  | 'rose'
+  | 'purple'
+  | 'orange'
+  | 'kraft'
+  | 'white'
+
+export type WashiPattern = 'plain' | 'grid' | 'dots' | 'stripes'
+
 interface WashiTapeProps {
-  variant?: 'yellow' | 'green' | 'blue' | 'rose' | 'purple' | 'orange'
+  variant?: WashiVariant
+  pattern?: WashiPattern
   className?: string
   rotate?: string
+  width?: number | string
+  height?: number | string
+  opacity?: number
 }
 
 export default function WashiTape({
   variant = 'yellow',
+  pattern = 'plain',
   className = '',
   rotate = '-rotate-1',
+  width = 120,
+  height = 32,
+  opacity,
 }: WashiTapeProps) {
   const uniqueId = useId().replace(/:/g, '')
 
-  const colorConfig = {
+  const palette: Record<
+    WashiVariant,
+    {
+      baseColor: string
+      gradientTop: string
+      gradientBottom: string
+      defaultOpacity: number
+      fiberColor: string
+      creaseHighlight: string
+      creaseShadow: string
+      rimHighlight: string
+      patternColor: string
+    }
+  > = {
     yellow: {
-      fill: '#fef08a',
-      opacity: 0.88,
-      fiberColor: 'rgba(202, 138, 4, 0.18)',
-      highlight: 'rgba(255, 255, 255, 0.75)',
+      baseColor: '#fef08a',
+      gradientTop: '#fef9c3',
+      gradientBottom: '#fde047',
+      defaultOpacity: 0.86,
+      fiberColor: 'rgba(161, 98, 7, 0.16)',
+      creaseHighlight: 'rgba(255, 255, 255, 0.55)',
+      creaseShadow: 'rgba(113, 63, 18, 0.08)',
+      rimHighlight: 'rgba(255, 255, 255, 0.85)',
+      patternColor: 'rgba(161, 98, 7, 0.12)',
     },
     green: {
-      fill: '#bbf7d0',
-      opacity: 0.88,
-      fiberColor: 'rgba(22, 163, 74, 0.18)',
-      highlight: 'rgba(255, 255, 255, 0.75)',
+      baseColor: '#bbf7d0',
+      gradientTop: '#dcfce7',
+      gradientBottom: '#86efac',
+      defaultOpacity: 0.86,
+      fiberColor: 'rgba(21, 128, 61, 0.16)',
+      creaseHighlight: 'rgba(255, 255, 255, 0.55)',
+      creaseShadow: 'rgba(20, 83, 45, 0.08)',
+      rimHighlight: 'rgba(255, 255, 255, 0.85)',
+      patternColor: 'rgba(21, 128, 61, 0.12)',
     },
     blue: {
-      fill: '#bfdbfe',
-      opacity: 0.88,
-      fiberColor: 'rgba(37, 99, 235, 0.18)',
-      highlight: 'rgba(255, 255, 255, 0.75)',
+      baseColor: '#bfdbfe',
+      gradientTop: '#dbeafe',
+      gradientBottom: '#93c5fd',
+      defaultOpacity: 0.86,
+      fiberColor: 'rgba(29, 78, 216, 0.16)',
+      creaseHighlight: 'rgba(255, 255, 255, 0.55)',
+      creaseShadow: 'rgba(30, 58, 138, 0.08)',
+      rimHighlight: 'rgba(255, 255, 255, 0.85)',
+      patternColor: 'rgba(29, 78, 216, 0.12)',
     },
     rose: {
-      fill: '#fecdd3',
-      opacity: 0.88,
-      fiberColor: 'rgba(225, 29, 72, 0.18)',
-      highlight: 'rgba(255, 255, 255, 0.75)',
+      baseColor: '#fecdd3',
+      gradientTop: '#ffe4e6',
+      gradientBottom: '#fda4af',
+      defaultOpacity: 0.86,
+      fiberColor: 'rgba(190, 18, 60, 0.16)',
+      creaseHighlight: 'rgba(255, 255, 255, 0.55)',
+      creaseShadow: 'rgba(136, 19, 55, 0.08)',
+      rimHighlight: 'rgba(255, 255, 255, 0.85)',
+      patternColor: 'rgba(190, 18, 60, 0.12)',
     },
     purple: {
-      fill: '#e9d5ff',
-      opacity: 0.88,
-      fiberColor: 'rgba(147, 51, 234, 0.18)',
-      highlight: 'rgba(255, 255, 255, 0.75)',
+      baseColor: '#e9d5ff',
+      gradientTop: '#f3e8ff',
+      gradientBottom: '#d8b4fe',
+      defaultOpacity: 0.86,
+      fiberColor: 'rgba(126, 34, 206, 0.16)',
+      creaseHighlight: 'rgba(255, 255, 255, 0.55)',
+      creaseShadow: 'rgba(88, 28, 135, 0.08)',
+      rimHighlight: 'rgba(255, 255, 255, 0.85)',
+      patternColor: 'rgba(126, 34, 206, 0.12)',
     },
     orange: {
-      fill: '#fed7aa',
-      opacity: 0.88,
-      fiberColor: 'rgba(234, 88, 12, 0.18)',
-      highlight: 'rgba(255, 255, 255, 0.75)',
+      baseColor: '#fed7aa',
+      gradientTop: '#ffedd5',
+      gradientBottom: '#fdba74',
+      defaultOpacity: 0.86,
+      fiberColor: 'rgba(194, 65, 12, 0.16)',
+      creaseHighlight: 'rgba(255, 255, 255, 0.55)',
+      creaseShadow: 'rgba(124, 45, 18, 0.08)',
+      rimHighlight: 'rgba(255, 255, 255, 0.85)',
+      patternColor: 'rgba(194, 65, 12, 0.12)',
+    },
+    kraft: {
+      baseColor: '#e2d4b7',
+      gradientTop: '#ebe2cc',
+      gradientBottom: '#d5c39e',
+      defaultOpacity: 0.9,
+      fiberColor: 'rgba(120, 85, 40, 0.22)',
+      creaseHighlight: 'rgba(255, 255, 255, 0.45)',
+      creaseShadow: 'rgba(70, 45, 15, 0.12)',
+      rimHighlight: 'rgba(255, 255, 255, 0.75)',
+      patternColor: 'rgba(120, 85, 40, 0.15)',
+    },
+    white: {
+      baseColor: '#ffffff',
+      gradientTop: '#ffffff',
+      gradientBottom: '#f1f5f9',
+      defaultOpacity: 0.78,
+      fiberColor: 'rgba(100, 116, 139, 0.15)',
+      creaseHighlight: 'rgba(255, 255, 255, 0.7)',
+      creaseShadow: 'rgba(15, 23, 42, 0.06)',
+      rimHighlight: 'rgba(255, 255, 255, 0.95)',
+      patternColor: 'rgba(100, 116, 139, 0.1)',
     },
   }
 
-  const c = colorConfig[variant] || colorConfig.yellow
+  const c = palette[variant] || palette.yellow
+  const effectiveOpacity = opacity !== undefined ? opacity : c.defaultOpacity
+
+  // Ultra-detailed natural torn edge path (serrated paper fibers, uneven rip teeth)
+  // Dimensions calibrated for 120 x 32 viewBox
+  const mainTapePath = `
+    M 7.5,3.2
+    Q 60,1.8 112.5,3.2
+    L 114.2,5.5
+    L 111.8,7.8
+    L 115.0,10.2
+    L 112.4,13.0
+    L 116.2,16.0
+    L 112.0,19.2
+    L 115.4,22.5
+    L 112.2,25.8
+    L 114.5,28.8
+    Q 60,30.2 7.5,28.8
+    L 5.8,26.2
+    L 8.2,23.5
+    L 4.8,20.0
+    L 8.0,16.5
+    L 4.5,13.2
+    L 7.8,9.8
+    L 5.2,6.5
+    Z
+  `
 
   return (
     <div
       className={`absolute z-30 pointer-events-none select-none ${rotate} ${className}`}
-      style={{ mixBlendMode: 'multiply' }}
+      style={{
+        width,
+        height,
+        filter: 'drop-shadow(0px 2px 3px rgba(30, 41, 59, 0.16)) drop-shadow(0px 1px 1px rgba(30, 41, 59, 0.08))',
+      }}
       aria-hidden="true"
     >
       <svg
-        width="112"
-        height="32"
-        viewBox="0 0 112 32"
+        width="100%"
+        height="100%"
+        viewBox="0 0 120 32"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
         className="overflow-visible"
       >
         <defs>
-          {/* Mathematical Fractal Noise Distortion Filter for Organic Ripped Paper Tears */}
-          <filter
-            id={`torn-tape-${uniqueId}`}
-            x="-15%"
-            y="-15%"
-            width="130%"
-            height="130%"
-            filterUnits="userSpaceOnUse"
-          >
-            {/* High-frequency fiber turbulence on horizontal rip ends */}
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.09 0.75"
-              numOctaves="4"
-              result="noise"
-            />
-            {/* Displace the edges of the strip according to the noise map */}
-            <feDisplacementMap
-              in="SourceGraphic"
-              in2="noise"
-              scale="4.5"
-              xChannelSelector="R"
-              yChannelSelector="G"
-              result="displacedTape"
-            />
-            {/* Soft, physical contact shadow underneath the torn tape */}
-            <feDropShadow
-              dx="0"
-              dy="2"
-              stdDeviation="1.8"
-              floodColor="#1e293b"
-              floodOpacity="0.22"
-            />
-          </filter>
+          {/* Vertical sheen / translucent gradient */}
+          <linearGradient id={`tape-grad-${uniqueId}`} x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor={c.gradientTop} stopOpacity={effectiveOpacity} />
+            <stop offset="30%" stopColor={c.baseColor} stopOpacity={effectiveOpacity} />
+            <stop offset="85%" stopColor={c.gradientBottom} stopOpacity={effectiveOpacity} />
+            <stop offset="100%" stopColor={c.baseColor} stopOpacity={effectiveOpacity * 0.95} />
+          </linearGradient>
 
-          {/* Authentic Washi Kozo Mulberry Paper Fiber Texture Pattern */}
+          {/* Authentic Washi Kozo Mulberry Paper Texture Pattern */}
           <pattern
-            id={`washi-fiber-${uniqueId}`}
-            width="8"
-            height="8"
+            id={`kozo-fiber-${uniqueId}`}
+            width="12"
+            height="12"
             patternUnits="userSpaceOnUse"
           >
-            <line x1="0" y1="2" x2="8" y2="2" stroke={c.fiberColor} strokeWidth="0.6" strokeDasharray="2 3" />
-            <line x1="0" y1="6" x2="8" y2="6" stroke={c.fiberColor} strokeWidth="0.6" strokeDasharray="3 2" />
-            <line x1="3" y1="0" x2="3" y2="8" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5" />
+            {/* Fine longitudinal pulp fibers */}
+            <line x1="0" y1="3" x2="12" y2="3" stroke={c.fiberColor} strokeWidth="0.5" strokeDasharray="3 4 2 3" />
+            <line x1="0" y1="8" x2="12" y2="8" stroke={c.fiberColor} strokeWidth="0.5" strokeDasharray="4 2 3 3" />
+            <line x1="0" y1="11" x2="12" y2="11" stroke={c.fiberColor} strokeWidth="0.4" strokeDasharray="2 5" />
+            {/* Delicate diagonal kozo threads */}
+            <path d="M 0 12 L 12 0" stroke={c.fiberColor} strokeWidth="0.35" strokeDasharray="1 6" />
+            <path d="M 0 6 L 6 0" stroke={c.fiberColor} strokeWidth="0.3" strokeDasharray="2 5" />
           </pattern>
+
+          {/* Optional Stationery Patterns */}
+          {pattern === 'grid' && (
+            <pattern id={`pattern-grid-${uniqueId}`} width="6" height="6" patternUnits="userSpaceOnUse">
+              <path d="M 6 0 L 0 0 0 6" fill="none" stroke={c.patternColor} strokeWidth="0.5" />
+            </pattern>
+          )}
+
+          {pattern === 'dots' && (
+            <pattern id={`pattern-dots-${uniqueId}`} width="6" height="6" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="3" r="0.75" fill={c.patternColor} />
+            </pattern>
+          )}
+
+          {pattern === 'stripes' && (
+            <pattern id={`pattern-stripes-${uniqueId}`} width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="0" x2="0" y2="8" stroke={c.patternColor} strokeWidth="2" />
+            </pattern>
+          )}
         </defs>
 
-        {/* The Translucent, Fractal-Displaced Washi Tape Strip */}
-        <g filter={`url(#torn-tape-${uniqueId})`}>
-          {/* Main tape body with torn ends */}
-          <path
-            d="
-              M 7,5
-              Q 56,4.5 105,5
-              L 104,8
-              L 106,12
-              L 103,16
-              L 106,20
-              L 104,24
-              L 105,27
-              Q 56,27.5 7,27
-              L 8,23
-              L 5,19
-              L 8,15
-              L 5,11
-              L 8,7
-              Z
-            "
-            fill={c.fill}
-            fillOpacity={c.opacity}
-          />
+        {/* 1. Underlying Adhesive Shadow Layer (Simulates contact bond to paper surface) */}
+        <path
+          d={mainTapePath}
+          fill="rgba(15, 23, 42, 0.05)"
+          transform="translate(0, 0.6)"
+        />
 
-          {/* Overlay paper fiber grid */}
-          <path
-            d="
-              M 7,5
-              Q 56,4.5 105,5
-              L 104,8
-              L 106,12
-              L 103,16
-              L 106,20
-              L 104,24
-              L 105,27
-              Q 56,27.5 7,27
-              L 8,23
-              L 5,19
-              L 8,15
-              L 5,11
-              L 8,7
-              Z
-            "
-            fill={`url(#washi-fiber-${uniqueId})`}
-          />
+        {/* 2. Main Translucent Washi Tape Body */}
+        <path
+          d={mainTapePath}
+          fill={`url(#tape-grad-${uniqueId})`}
+        />
 
-          {/* Specular Light Reflection Along the Top Waxy Edge */}
-          <path
-            d="M 9,6.5 Q 56,6 103,6.5"
-            stroke={c.highlight}
-            strokeWidth="0.8"
-            strokeLinecap="round"
-          />
+        {/* 3. Authentic Mulberry Fiber Texture Overlay */}
+        <path
+          d={mainTapePath}
+          fill={`url(#kozo-fiber-${uniqueId})`}
+        />
 
-          {/* Left Frayed Paper Fiber Highlight */}
+        {/* 4. Pattern Overlay (if grid / dots / stripes selected) */}
+        {pattern !== 'plain' && (
           <path
-            d="M 7,5 L 8,7 L 5,11 L 8,15 L 5,19 L 8,23 L 7,27"
-            stroke="rgba(255,255,255,0.85)"
-            strokeWidth="0.75"
-            strokeLinecap="round"
+            d={mainTapePath}
+            fill={`url(#pattern-${pattern}-${uniqueId})`}
           />
+        )}
 
-          {/* Right Frayed Paper Fiber Highlight */}
-          <path
-            d="M 105,5 L 104,8 L 106,12 L 103,16 L 106,20 L 104,24 L 105,27"
-            stroke="rgba(255,255,255,0.85)"
-            strokeWidth="0.75"
-            strokeLinecap="round"
-          />
-        </g>
+        {/* 5. Realistic Paper Creases & Press Wrinkles (Where thumb pressed the tape) */}
+        {/* Wrinkle 1 (left side) */}
+        <path
+          d="M 32,2.8 Q 36,15 39,29.2"
+          stroke={c.creaseHighlight}
+          strokeWidth="0.75"
+          strokeLinecap="round"
+          fill="none"
+        />
+        <path
+          d="M 33,2.8 Q 37,15 40,29.2"
+          stroke={c.creaseShadow}
+          strokeWidth="0.75"
+          strokeLinecap="round"
+          fill="none"
+        />
+
+        {/* Wrinkle 2 (right side) */}
+        <path
+          d="M 84,2.8 Q 87,17 90,29.2"
+          stroke={c.creaseHighlight}
+          strokeWidth="0.75"
+          strokeLinecap="round"
+          fill="none"
+        />
+        <path
+          d="M 85,2.8 Q 88,17 91,29.2"
+          stroke={c.creaseShadow}
+          strokeWidth="0.75"
+          strokeLinecap="round"
+          fill="none"
+        />
+
+        {/* 6. Top Waxy Specular Sheen (Micro reflection along smooth manufactured edge) */}
+        <path
+          d="M 9,3.8 Q 60,2.5 111,3.8"
+          stroke={c.rimHighlight}
+          strokeWidth="0.85"
+          strokeLinecap="round"
+          fill="none"
+        />
+
+        {/* 7. Bottom Edge Contact Line (Slight adhesive thickness shadow) */}
+        <path
+          d="M 9,28.2 Q 60,29.4 111,28.2"
+          stroke="rgba(0, 0, 0, 0.12)"
+          strokeWidth="0.65"
+          strokeLinecap="round"
+          fill="none"
+        />
+
+        {/* 8. Left Torn Edge Exposed Paper White Core Highlights (Micro fibrils) */}
+        <path
+          d="M 7.5,3.2 L 5.2,6.5 L 7.8,9.8 L 4.5,13.2 L 8.0,16.5 L 4.8,20.0 L 8.2,23.5 L 5.8,26.2 L 7.5,28.8"
+          stroke={c.rimHighlight}
+          strokeWidth="0.9"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+        />
+
+        {/* 9. Right Torn Edge Exposed Paper White Core Highlights */}
+        <path
+          d="M 112.5,3.2 L 114.2,5.5 L 111.8,7.8 L 115.0,10.2 L 112.4,13.0 L 116.2,16.0 L 112.0,19.2 L 115.4,22.5 L 112.2,25.8 L 114.5,28.8"
+          stroke={c.rimHighlight}
+          strokeWidth="0.9"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+        />
       </svg>
     </div>
   )

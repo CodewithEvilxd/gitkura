@@ -14,10 +14,13 @@ import {
   Share2,
   CheckCircle2,
   AlertTriangle,
+  Search,
+  X,
 } from 'lucide-react'
 
 export default function DisasterRecoveryPage() {
   const [copiedId, setCopiedId] = useState<string | null>(null)
+  const [lightboxImg, setLightboxImg] = useState<{ src: string; caption: string } | null>(null)
 
   const scenarios = [
     {
@@ -81,7 +84,7 @@ git push --tags origin`,
   }
 
   return (
-    <div className="min-h-screen flex flex-col justify-between selection:bg-highlighter-yellow selection:text-ink-blue">
+    <div className="min-h-screen flex flex-col justify-between selection:bg-highlighter-yellow selection:text-ink-blue bg-[#faf8f5]">
       <Navbar />
 
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-8 py-12 space-y-12 w-full">
@@ -96,16 +99,52 @@ git push --tags origin`,
           <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white border-2 border-pencil-black shadow-scribely-sm rounded-full -rotate-1">
             <span className="w-2.5 h-2.5 rounded-full bg-[#dc2626]" />
             <span className="text-xs font-mono font-black uppercase tracking-wider text-ink-blue">
-              Chapter 04 &bull; Disaster Recovery Playbook
+              Chapter 11 &bull; Disaster Recovery Runbook
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-black font-display text-ink-blue tracking-tight">
             Disaster Recovery &amp; Code Restoration
           </h1>
-          <p className="font-hand text-2xl text-[#475569] max-w-3xl font-medium">
+          <p className="font-patrick text-2xl text-[#475569] max-w-3xl font-medium">
             Step-by-step restoration manuals to recover your codebase in seconds when upstream cloud outages or account lockouts occur.
           </p>
+        </div>
+
+        {/* Master Disaster Recovery Infographic Card */}
+        <div className="space-y-2.5">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#f3e8ff] border-2 border-pencil-black rounded-xl shadow-scribely-sm">
+              <ShieldAlert className="w-3.5 h-3.5 text-[#7c3aed]" />
+              <span className="text-xs font-mono font-bold text-[#6b21a8] uppercase tracking-wide">
+                Fig 11.1 &bull; Emergency Recovery Runbook
+              </span>
+            </div>
+            <span className="text-xs font-mono font-bold bg-[#dcfce7] text-[#15803d] px-2.5 py-0.5 rounded-full border-2 border-pencil-black shadow-scribely-sm">
+              3 Proven Pathways
+            </span>
+          </div>
+
+          <div
+            onClick={() => setLightboxImg({ src: '/diagrams/disaster-recovery-runbook.jpg', caption: 'Figure 11.1: Emergency Disaster Recovery Runbook — 3 Proven Pathways' })}
+            className="relative w-full p-2.5 bg-[#fdfbf7] rounded-2xl border-2 border-pencil-black shadow-scribely-sm cursor-zoom-in"
+          >
+            <img
+              src="/diagrams/disaster-recovery-runbook.jpg"
+              alt="Emergency Disaster Recovery Runbook"
+              className="w-full h-auto max-h-[520px] object-contain rounded-xl select-none mix-blend-multiply"
+            />
+          </div>
+
+          <div className="pt-2 border-t-2 border-dashed border-pencil-black/15 flex items-center justify-between">
+            <span className="font-kalam text-sm font-bold text-[#1a3a5f] flex items-center gap-1.5">
+              <span>↳</span> Instant local tree &bull; Immutable .tar.gz extract &bull; Emergency remote relocation
+            </span>
+            <span className="font-mono text-[10px] text-ink-blue font-bold flex items-center gap-1">
+              <Search className="w-3 h-3 text-ink-blue" />
+              <span>Inspect Full-Res</span>
+            </span>
+          </div>
         </div>
 
         {/* 3 Scenarios Grid */}
@@ -170,6 +209,42 @@ git push --tags origin`,
           })}
         </div>
       </main>
+
+      {/* Lightbox Modal */}
+      {lightboxImg && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-200"
+          onClick={() => setLightboxImg(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full max-h-[90vh] bg-white p-4 rounded-3xl border-3 border-pencil-black shadow-scribely-xl space-y-3 flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between border-b-2 border-pencil-black/10 pb-2">
+              <span className="font-display font-black text-sm text-ink-blue">
+                {lightboxImg.caption}
+              </span>
+              <button
+                type="button"
+                onClick={() => setLightboxImg(null)}
+                className="w-8 h-8 rounded-full bg-[#f1f5f9] hover:bg-pencil-black hover:text-white border-2 border-pencil-black font-bold flex items-center justify-center cursor-pointer transition-all"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+            <div className="flex-1 overflow-auto flex items-center justify-center p-2 bg-[#faf8f5] rounded-2xl border border-pencil-black/10">
+              <img
+                src={lightboxImg.src}
+                alt={lightboxImg.caption}
+                className="max-h-[75vh] w-auto object-contain rounded-xl select-none"
+              />
+            </div>
+            <p className="text-[11px] font-mono text-center text-[#64748b]">
+              Press ESC or click close button to return
+            </p>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>

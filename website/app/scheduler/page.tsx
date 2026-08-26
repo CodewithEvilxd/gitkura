@@ -13,6 +13,7 @@ import {
   CheckCircle2,
   Calendar,
   Code2,
+  Zap,
 } from 'lucide-react'
 
 export default function SchedulerPage() {
@@ -138,9 +139,10 @@ export class SchedulerService {
               <p className="font-kalam text-lg text-[#475569] font-bold">
                 Triggers unattended mirror pull &amp; cloud push {freq} at {time} UTC.
               </p>
-              <div className="p-3 bg-white rounded-xl border border-pencil-black/30">
+              <div className="p-3 bg-white rounded-xl border border-pencil-black/30 flex items-center gap-2">
+                <Zap className="w-4 h-4 text-[#15803d] shrink-0" />
                 <span className="font-gaegu text-base text-[#15803d] font-bold">
-                  ⚡ System Tray Status: Standing Guard (32.4 MB RAM)
+                  System Tray Status: Standing Guard (32.4 MB RAM)
                 </span>
               </div>
             </div>

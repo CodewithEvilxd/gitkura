@@ -313,7 +313,7 @@ export default function VideoDemoSection() {
       <div className="relative max-w-4xl mx-auto pt-7 sm:pt-12 pb-7 sm:pb-12 px-1 sm:px-4">
 
         {/* ------------------------------------------------------------- */}
-        {/* 1. TOP-LEFT: 🛡️ air-gapped local vault ⤵                      */}
+        {/* 1. TOP-LEFT: air-gapped local vault                           */}
         {/* ------------------------------------------------------------- */}
         <div className="inline-flex items-center gap-1 sm:gap-2 absolute top-0 sm:-top-3 left-1 sm:left-6 z-30 pointer-events-none select-none -rotate-2">
           {/* Blue Color Pencil Shield */}
@@ -330,7 +330,7 @@ export default function VideoDemoSection() {
             air-gapped local vault
           </span>
 
-          {/* Curved Blue Arrow ⤵ pointing into frame */}
+          {/* Curved Blue Arrow pointing into frame */}
           <svg className="w-4 h-3 sm:w-8 sm:h-6 text-[#2563eb] select-none ml-0.5" viewBox="0 0 35 25" fill="none" stroke="currentColor">
             <path d="M 3 6 C 14 4, 22 10, 30 20" strokeWidth="2" strokeLinecap="round" />
             <path d="M 22 19 L 30 20 L 29 11" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -338,10 +338,10 @@ export default function VideoDemoSection() {
         </div>
 
         {/* ------------------------------------------------------------- */}
-        {/* 2. TOP-RIGHT: ↙ 60 fps live delta demo ☆                      */}
+        {/* 2. TOP-RIGHT: 60 fps live delta demo                          */}
         {/* ------------------------------------------------------------- */}
         <div className="inline-flex items-center gap-1 sm:gap-2 absolute top-0 sm:-top-3 right-1 sm:right-6 z-30 pointer-events-none select-none rotate-2">
-          {/* Curved Red Arrow ↙ pointing into frame */}
+          {/* Curved Red Arrow pointing into frame */}
           <svg className="w-4 h-3 sm:w-8 sm:h-6 text-[#b91c1c] select-none mr-0.5" viewBox="0 0 35 25" fill="none" stroke="currentColor">
             <path d="M 32 6 C 21 4, 13 10, 5 20" strokeWidth="2" strokeLinecap="round" />
             <path d="M 13 19 L 5 20 L 6 11" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -354,17 +354,17 @@ export default function VideoDemoSection() {
             60 fps live delta demo
           </span>
 
-          {/* Hand-Drawn Red Star Outline ☆ */}
+          {/* Hand-Drawn Red Star Outline */}
           <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#b91c1c]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M 12 2 L 15 8 L 22 9 L 17 14 L 18 21 L 12 17 L 6 21 L 7 14 L 2 9 L 9 8 Z" fill="#fee2e2" fillOpacity="0.5" />
           </svg>
         </div>
 
         {/* ------------------------------------------------------------- */}
-        {/* 3. MID-LEFT: ⚡ differential sync ➔                           */}
+        {/* 3. MID-LEFT: differential sync                                */}
         {/* ------------------------------------------------------------- */}
         <div className="hidden lg:inline-flex items-center gap-2 absolute top-[36%] -left-32 xl:-left-52 z-30 pointer-events-none select-none -rotate-3">
-          {/* Yellow Crayon Lightning Bolt ⚡ */}
+          {/* Yellow Crayon Lightning Bolt */}
           <svg className="w-6 h-7 text-[#d97706]" viewBox="0 0 24 28" fill="none" stroke="currentColor">
             <path d="M 13 2 L 4 15 L 11 15 L 9 26 L 20 11 L 13 11 Z" fill="#fef08a" stroke="#d97706" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -384,7 +384,7 @@ export default function VideoDemoSection() {
             </span>
           </div>
 
-          {/* Green Arrow ➔ pointing into frame */}
+          {/* Green Arrow pointing into frame */}
           <svg className="w-9 h-5 text-[#15803d] select-none ml-1" viewBox="0 0 40 20" fill="none" stroke="currentColor">
             <path d="M 3 10 C 14 5, 24 15, 36 10" strokeWidth="2" strokeLinecap="round" />
             <path d="M 28 4 L 36 10 L 29 16" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -392,10 +392,10 @@ export default function VideoDemoSection() {
         </div>
 
         {/* ------------------------------------------------------------- */}
-        {/* 4. MID-RIGHT: ⬅ multi-target vault ☁️                          */}
+        {/* 4. MID-RIGHT: multi-target vault                              */}
         {/* ------------------------------------------------------------- */}
         <div className="hidden lg:inline-flex items-center gap-2 absolute top-[36%] -right-36 xl:-right-56 z-30 pointer-events-none select-none rotate-2">
-          {/* Blue Arrow ⬅ pointing into frame */}
+          {/* Blue Arrow pointing into frame */}
           <svg className="w-9 h-5 text-[#1d4ed8] select-none mr-1" viewBox="0 0 40 20" fill="none" stroke="currentColor">
             <path d="M 37 10 C 26 5, 16 15, 4 10" strokeWidth="2" strokeLinecap="round" />
             <path d="M 12 4 L 4 10 L 11 16" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -409,7 +409,7 @@ export default function VideoDemoSection() {
               >
                 multi-target vault
               </span>
-              {/* Hand-Drawn Blue Pencil Cloud ☁️ */}
+              {/* Hand-Drawn Blue Pencil Cloud */}
               <svg className="w-7 h-5 text-[#2563eb]" viewBox="0 0 32 24" fill="none" stroke="currentColor">
                 <path d="M 8 18 C 4 18, 2 15, 2 12 C 2 9, 5 8, 7 8 C 8 4, 12 2, 17 2 C 22 2, 25 5, 25 9 C 28 9, 30 11, 30 14 C 30 17, 27 18, 24 18 Z" fill="#dbeafe" fillOpacity="0.4" stroke="#1d4ed8" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -424,10 +424,10 @@ export default function VideoDemoSection() {
         </div>
 
         {/* ------------------------------------------------------------- */}
-        {/* 5. BOTTOM-LEFT: 🔒 AES-256 zero-knowledge ↗                   */}
+        {/* 5. BOTTOM-LEFT: AES-256 zero-knowledge                        */}
         {/* ------------------------------------------------------------- */}
         <div className="inline-flex items-center gap-1 sm:gap-2 absolute bottom-0 sm:-bottom-3 left-1 sm:left-8 z-30 pointer-events-none select-none -rotate-2">
-          {/* Purple Color Pencil Padlock 🔒 */}
+          {/* Purple Color Pencil Padlock */}
           <svg className="w-3.5 h-3.5 sm:w-6 sm:h-6 text-[#6b21a8]" viewBox="0 0 28 28" fill="none" stroke="currentColor">
             <rect x="5" y="11" width="18" height="14" rx="2.5" fill="#f3e8ff" fillOpacity="0.5" stroke="#6b21a8" strokeWidth="2" strokeLinecap="round" />
             <path d="M 9 11 L 9 7 C 9 4, 11 3, 14 3 C 17 3, 19 4, 19 7 L 19 11" stroke="#6b21a8" strokeWidth="2" strokeLinecap="round" />
@@ -441,7 +441,7 @@ export default function VideoDemoSection() {
             AES-256 zero-knowledge
           </span>
 
-          {/* Curved Purple Arrow ↗ pointing up into frame */}
+          {/* Curved Purple Arrow pointing up into frame */}
           <svg className="w-4 h-3 sm:w-8 sm:h-6 text-[#6b21a8] select-none ml-0.5" viewBox="0 0 35 25" fill="none" stroke="currentColor">
             <path d="M 3 20 C 14 20, 22 14, 30 4" strokeWidth="2" strokeLinecap="round" />
             <path d="M 22 4 L 30 4 L 29 13" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -449,10 +449,10 @@ export default function VideoDemoSection() {
         </div>
 
         {/* ------------------------------------------------------------- */}
-        {/* 6. BOTTOM-RIGHT: ↖ 1-click disaster recovery ♡                */}
+        {/* 6. BOTTOM-RIGHT: 1-click disaster recovery                    */}
         {/* ------------------------------------------------------------- */}
         <div className="inline-flex items-center gap-1 sm:gap-2 absolute bottom-0 sm:-bottom-3 right-1 sm:right-8 z-30 pointer-events-none select-none rotate-2">
-          {/* Curved Red Arrow ↖ pointing up into frame */}
+          {/* Curved Red Arrow pointing up into frame */}
           <svg className="w-4 h-3 sm:w-8 sm:h-6 text-[#b91c1c] select-none mr-0.5" viewBox="0 0 35 25" fill="none" stroke="currentColor">
             <path d="M 32 20 C 21 20, 13 14, 5 4" strokeWidth="2" strokeLinecap="round" />
             <path d="M 13 4 L 5 4 L 6 13" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -465,7 +465,7 @@ export default function VideoDemoSection() {
             1-click disaster recovery
           </span>
 
-          {/* Hand-Drawn Red Heart Outline ♡ */}
+          {/* Hand-Drawn Red Heart Outline */}
           <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#b91c1c]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
             <path d="M 12 21 C 12 21, 3 14, 3 8 C 3 4.5, 6 2, 9 2 C 11 2, 12 3.5, 12 4.5 C 12 3.5, 13 2, 15 2 C 18 2, 21 4.5, 21 8 C 21 14, 12 21, 12 21 Z" fill="#fee2e2" fillOpacity="0.5" />
           </svg>
