@@ -4,13 +4,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Github, ArrowUp } from 'lucide-react'
 
-export default function Footer() {
+export default function Footer({ className }: { className?: string }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
-    <footer className="mt-20 border-t-2 border-pencil-black bg-[#faf8f5] py-8 px-4 sm:px-8">
+    <footer className={`border-t-2 border-pencil-black bg-[#faf8f5] py-8 px-4 sm:px-8 ${className ?? 'mt-20'}`}>
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
         {/* Left: Brand Identity */}
         <div className="flex items-center gap-2.5">

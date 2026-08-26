@@ -7,6 +7,7 @@ import {
   GitBranch,
   Cloud,
   AlertTriangle,
+  ZoomIn,
 } from 'lucide-react'
 import WashiTape from '@/components/WashiTape'
 import HighlighterBadge, { HighlighterColor } from '@/components/HighlighterBadge'
@@ -32,7 +33,7 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
           title: 'Renderer is 100% UNTRUSTED!',
           sub: '↳ Zero raw fs, child_process, or shell execution in UI',
           color: 'text-[#dc2626]',
-          align: 'items-start',
+          align: 'items-start text-left',
           rotate: '-rotate-2',
         },
         {
@@ -48,7 +49,7 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
           title: 'PBKDF2 (10,000 iter) -> 32B AES Key',
           sub: '↳ Derived in Main memory with per-repo crypt-salt',
           color: 'text-[#15803d]',
-          align: 'items-start',
+          align: 'items-start text-left',
           rotate: 'rotate-1',
         },
         {
@@ -61,21 +62,21 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
       ],
       arrowsSvg: (
         <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 overflow-visible" viewBox="0 0 1000 562.5">
-          {/* Top-Left Arrow -> Threat Model (x: 65, y: 200) */}
-          <path d="M 90 -25 C 85 60, 60 140, 65 200" fill="none" stroke="#dc2626" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 52 180 L 65 200 L 78 182" fill="none" stroke="#dc2626" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Top-Left Arrow -> Threat Model / Renderer (x: 95, y: 340) */}
+          <path d="M 90 -20 C 95 90, 85 220, 95 335" fill="none" stroke="#dc2626" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 85 316 L 95 335 L 105 318" fill="none" stroke="#dc2626" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 
-          {/* Top-Right Arrow -> ContextBridge Barrier (x: 515, y: 145) */}
-          <path d="M 750 -25 C 680 40, 590 80, 515 145" fill="none" stroke="#1d4ed8" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 535 130 L 515 145 L 530 158" fill="none" stroke="#1d4ed8" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Top-Right Arrow -> Preload ContextBridge Gateway (x: 485, y: 340) */}
+          <path d="M 750 -20 C 660 70, 560 170, 488 335" fill="none" stroke="#1d4ed8" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 508 322 L 488 335 L 498 348" fill="none" stroke="#1d4ed8" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 
-          {/* Bottom-Left Arrow -> PBKDF2 Formula Oval (x: 205, y: 480) */}
-          <path d="M 150 590 C 170 540, 190 510, 205 480" fill="none" stroke="#15803d" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 190 495 L 205 480 L 210 502" fill="none" stroke="#15803d" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Bottom-Left Arrow -> PBKDF2 Formula Oval (x: 220, y: 445) */}
+          <path d="M 160 585 C 180 540, 205 500, 220 455" fill="none" stroke="#15803d" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 205 468 L 220 455 L 226 475" fill="none" stroke="#15803d" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 
-          {/* Bottom-Right Arrow -> Crossed out localStorage (x: 880, y: 485) */}
-          <path d="M 820 590 C 840 550, 865 515, 880 485" fill="none" stroke="#b91c1c" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 865 500 L 880 485 L 888 502" fill="none" stroke="#b91c1c" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Bottom-Right Arrow -> Crossed out localStorage (x: 800, y: 430) */}
+          <path d="M 780 585 C 800 535, 805 480, 800 440" fill="none" stroke="#b91c1c" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 790 455 L 800 440 L 810 455" fill="none" stroke="#b91c1c" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
     },
@@ -92,7 +93,7 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
           title: 'Commit DAG: c1 -> c2 -> c3 -> c4',
           sub: '↳ Finds common base commit (c2) have/want ACKs',
           color: 'text-[#7c3aed]',
-          align: 'items-start',
+          align: 'items-start text-left',
           rotate: '-rotate-2',
         },
         {
@@ -108,7 +109,7 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
           title: 'Crossed-out Full Clones = 2.4 GB WASTE!',
           sub: '↳ No redundant packfile downloads; thin-pack generation only',
           color: 'text-[#b91c1c]',
-          align: 'items-start',
+          align: 'items-start text-left',
           rotate: 'rotate-1',
         },
         {
@@ -121,21 +122,21 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
       ],
       arrowsSvg: (
         <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 overflow-visible" viewBox="0 0 1000 562.5">
-          {/* Top-Left Arrow -> Commit DAG (x: 215, y: 155) */}
-          <path d="M 80 -25 C 90 40, 140 100, 215 155" fill="none" stroke="#7c3aed" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 195 145 L 215 155 L 208 172" fill="none" stroke="#7c3aed" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Top-Left Arrow -> Commit DAG (x: 215, y: 175) */}
+          <path d="M 90 -20 C 110 40, 160 110, 215 175" fill="none" stroke="#7c3aed" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 198 165 L 215 175 L 208 192" fill="none" stroke="#7c3aed" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 
-          {/* Top-Right Arrow -> 18.2 MB Thin-pack (x: 770, y: 155) */}
-          <path d="M 850 -25 C 840 40, 810 100, 770 155" fill="none" stroke="#059669" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 788 142 L 770 155 L 766 135" fill="none" stroke="#059669" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Top-Right Arrow -> 18.2 MB Thin-pack (x: 770, y: 175) */}
+          <path d="M 830 -20 C 820 40, 800 110, 770 175" fill="none" stroke="#059669" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 788 162 L 770 175 L 766 155" fill="none" stroke="#059669" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 
-          {/* Bottom-Left Arrow -> Crossed out Full clone (x: 215, y: 440) */}
-          <path d="M 120 590 C 140 540, 180 490, 215 440" fill="none" stroke="#b91c1c" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 200 455 L 215 440 L 222 460" fill="none" stroke="#b91c1c" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Bottom-Left Arrow -> Crossed out Full clone (x: 215, y: 415) */}
+          <path d="M 130 585 C 150 530, 185 470, 215 415" fill="none" stroke="#b91c1c" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 200 430 L 215 415 L 222 435" fill="none" stroke="#b91c1c" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 
-          {/* Bottom-Right Arrow -> Direct Ref updates (x: 770, y: 440) */}
-          <path d="M 880 590 C 850 540, 810 490, 770 440" fill="none" stroke="#1d4ed8" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 765 460 L 770 440 L 785 455" fill="none" stroke="#1d4ed8" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Bottom-Right Arrow -> Direct Ref updates (x: 770, y: 415) */}
+          <path d="M 860 585 C 830 530, 800 470, 770 415" fill="none" stroke="#1d4ed8" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 765 435 L 770 415 L 785 430" fill="none" stroke="#1d4ed8" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
     },
@@ -152,7 +153,7 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
           title: 'Central Bare Mirror is Source of Truth',
           sub: '↳ SQLite local index streams signed manifests to cloud targets',
           color: 'text-[#0284c7]',
-          align: 'items-start',
+          align: 'items-start text-left',
           rotate: '-rotate-2',
         },
         {
@@ -168,7 +169,7 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
           title: 'Exponential Backoff + Random Jitter',
           sub: '↳ Prevents API rate-limit hammering & thundering herds',
           color: 'text-[#dc2626]',
-          align: 'items-start',
+          align: 'items-start text-left',
           rotate: 'rotate-1',
         },
         {
@@ -181,21 +182,21 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
       ],
       arrowsSvg: (
         <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 overflow-visible" viewBox="0 0 1000 562.5">
-          {/* Top-Left Arrow -> Central Vault Box (x: 445, y: 190) */}
-          <path d="M 220 -25 C 290 50, 380 120, 445 190" fill="none" stroke="#0284c7" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 426 182 L 445 190 L 440 205" fill="none" stroke="#0284c7" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Top-Left Arrow -> Central Vault Box (x: 445, y: 200) */}
+          <path d="M 180 -20 C 260 50, 360 130, 445 200" fill="none" stroke="#0284c7" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 426 192 L 445 200 L 440 215" fill="none" stroke="#0284c7" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 
           {/* Top-Right Arrow -> Cloudflare R2 Box (x: 745, y: 305) */}
-          <path d="M 780 -25 C 790 90, 780 200, 745 305" fill="none" stroke="#b45309" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 760 290 L 745 305 L 762 312" fill="none" stroke="#b45309" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 780 -20 C 790 90, 780 200, 745 305" fill="none" stroke="#b45309" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 760 290 L 745 305 L 762 312" fill="none" stroke="#b45309" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 
           {/* Bottom-Left Arrow -> Plotted Jitter Curve (x: 140, y: 445) */}
-          <path d="M 150 590 C 145 530, 140 480, 140 445" fill="none" stroke="#dc2626" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 130 462 L 140 445 L 150 462" fill="none" stroke="#dc2626" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 150 585 C 145 530, 140 480, 140 445" fill="none" stroke="#dc2626" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 130 462 L 140 445 L 150 462" fill="none" stroke="#dc2626" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 
-          {/* Bottom-Right Arrow -> Telegram Stream (x: 745, y: 95) */}
-          <path d="M 820 590 C 860 400, 830 220, 745 95" fill="none" stroke="#15803d" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 765 102 L 745 95 L 755 116" fill="none" stroke="#15803d" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Bottom-Right Arrow -> Telegram Stream (x: 745, y: 110) */}
+          <path d="M 820 585 C 860 400, 830 220, 745 110" fill="none" stroke="#15803d" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 765 118 L 745 110 L 755 130" fill="none" stroke="#15803d" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
     },
@@ -212,7 +213,7 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
           title: 'POSIX renameSync() Atomic Inode Swap',
           sub: '↳ Write to .tmp -> SHA-256 verify -> atomic swap (zero corrupt files)',
           color: 'text-[#15803d]',
-          align: 'items-start',
+          align: 'items-start text-left',
           rotate: '-rotate-2',
         },
         {
@@ -228,7 +229,7 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
           title: 'Time Machine: tar -xzf in 5s',
           sub: '↳ Extract immutable point-in-time snapshot archive',
           color: 'text-[#b45309]',
-          align: 'items-start',
+          align: 'items-start text-left',
           rotate: 'rotate-1',
         },
         {
@@ -241,21 +242,21 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
       ],
       arrowsSvg: (
         <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 overflow-visible" viewBox="0 0 1000 562.5">
-          {/* Top-Left Arrow -> Step 4 Atomic swap box (x: 580, y: 80) */}
-          <path d="M 250 -25 C 380 15, 490 40, 580 80" fill="none" stroke="#15803d" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 560 72 L 580 80 L 568 95" fill="none" stroke="#15803d" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Top-Left Arrow -> Step 4 Atomic swap box (x: 580, y: 95) */}
+          <path d="M 200 -20 C 340 15, 470 45, 580 95" fill="none" stroke="#15803d" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 560 88 L 580 95 L 568 110" fill="none" stroke="#15803d" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 
-          {/* Top-Right Arrow -> 0s RTO Local Mirror Pathway (x: 310, y: 370) */}
-          <path d="M 750 -25 C 600 100, 420 220, 310 370" fill="none" stroke="#dc2626" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 330 360 L 310 370 L 325 385" fill="none" stroke="#dc2626" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Top-Right Arrow -> 0s RTO Local Mirror Pathway (x: 310, y: 360) */}
+          <path d="M 750 -20 C 600 100, 420 220, 310 360" fill="none" stroke="#dc2626" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 330 350 L 310 360 L 325 375" fill="none" stroke="#dc2626" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 
-          {/* Bottom-Left Arrow -> tar -xzf command box / Time machine (x: 445, y: 460) */}
-          <path d="M 250 590 C 320 540, 390 490, 445 460" fill="none" stroke="#b45309" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 426 470 L 445 460 L 435 482" fill="none" stroke="#b45309" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Bottom-Left Arrow -> tar -xzf command box / Time machine (x: 445, y: 455) */}
+          <path d="M 200 585 C 280 540, 370 490, 445 455" fill="none" stroke="#b45309" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 426 465 L 445 455 L 435 476" fill="none" stroke="#b45309" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
 
-          {/* Bottom-Right Arrow -> Quick Commands / Failover Box (x: 795, y: 390) */}
-          <path d="M 780 590 C 800 520, 805 450, 795 390" fill="none" stroke="#7c3aed" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M 788 410 L 795 390 L 806 408" fill="none" stroke="#7c3aed" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+          {/* Bottom-Right Arrow -> Quick Commands / Failover Box (x: 795, y: 385) */}
+          <path d="M 780 585 C 800 520, 805 450, 795 385" fill="none" stroke="#7c3aed" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M 788 405 L 795 385 L 806 402" fill="none" stroke="#7c3aed" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
     },
@@ -338,10 +339,19 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
               {cur.tagline}
             </p>
           </div>
+
+          <button
+            type="button"
+            onClick={() => setLightboxImg({ src: cur.src, caption: cur.title })}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-pencil-black/30 shadow-scribely-xs text-xs font-mono font-bold text-ink-blue hover:bg-yellow-50 transition-all cursor-pointer"
+          >
+            <ZoomIn className="w-3.5 h-3.5 text-ink-blue" />
+            <span>Full-Screen Lightbox</span>
+          </button>
         </div>
 
         {/* ========================================================================= */}
-        {/* UNIFIED WORKSTATION: PURE HANDWRITTEN NOTES + PRECISE ARROWS             */}
+        {/* UNIFIED WORKSTATION: HANDWRITTEN NOTES + REAL CURVED SVG ARROWS           */}
         {/* ========================================================================= */}
         <div className="relative w-full space-y-4">
           {/* Top Row: Pure Handwritten Marker Text */}
@@ -351,39 +361,42 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
                 key={idx}
                 className={`flex flex-col ${note.align} ${note.rotate} select-none min-w-0`}
               >
-                <span className={`font-caveat font-extrabold text-xl sm:text-2xl lg:text-3xl ${note.color} leading-tight drop-shadow-[0_1px_1px_rgba(255,255,255,1)] break-words`}>
+                <span className={`font-caveat font-extrabold text-2xl lg:text-3xl ${note.color} leading-tight drop-shadow-[0_1px_1px_rgba(255,255,255,1)] break-words`}>
                   {note.title}
                 </span>
-                <span className="font-kalam text-xs sm:text-sm text-[#475569] font-bold break-words">
+                <span className="font-kalam text-sm text-[#475569] font-bold break-words mt-0.5">
                   {note.sub}
                 </span>
               </div>
             ))}
           </div>
 
-          {/* Central Drawing Canvas with 16:9 aspect lock so SVG coordinates never distort */}
-          <div className="relative w-full aspect-[16/9] bg-white rounded-2xl sm:rounded-3xl border-2 border-pencil-black shadow-scribely-md overflow-visible">
+          {/* Central Drawing Canvas with 16:9 aspect lock */}
+          <div
+            onClick={() => setLightboxImg({ src: cur.src, caption: cur.title })}
+            className="relative w-full aspect-[16/9] bg-white rounded-2xl sm:rounded-3xl border-2 border-pencil-black shadow-scribely-md overflow-visible cursor-zoom-in group"
+          >
             <img
               src={cur.src}
               alt={cur.title}
               draggable={false}
               className="w-full h-full object-cover rounded-xl sm:rounded-2xl select-none pointer-events-none"
             />
-            {/* Direct 1:1 SVG Overlay Layer */}
+            {/* Direct 1:1 Hand-Drawn Curved SVG Overlay Layer */}
             {cur.arrowsSvg}
           </div>
 
           {/* Bottom Row: Pure Handwritten Marker Text */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 px-2 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 px-2 sm:px-6 pt-1">
             {cur.bottomNotes.map((note: any, idx: number) => (
               <div
                 key={idx}
                 className={`flex flex-col ${note.align} ${note.rotate} select-none min-w-0`}
               >
-                <span className={`font-caveat font-extrabold text-xl sm:text-2xl lg:text-3xl ${note.color} leading-tight drop-shadow-[0_1px_1px_rgba(255,255,255,1)] break-words`}>
+                <span className={`font-caveat font-extrabold text-2xl lg:text-3xl ${note.color} leading-tight drop-shadow-[0_1px_1px_rgba(255,255,255,1)] break-words`}>
                   {note.title}
                 </span>
-                <span className="font-kalam text-xs sm:text-sm text-[#475569] font-bold break-words">
+                <span className="font-kalam text-sm text-[#475569] font-bold break-words mt-0.5">
                   {note.sub}
                 </span>
               </div>
@@ -398,7 +411,7 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
             <span>4 Architectural Invariants Verified by Handwritten Proof</span>
           </div>
           <span className="font-caveat text-base text-[#64748b] font-bold">
-            Zero cloud middleman &bull; 100% Offline-First
+            Drafted on Engineering Rough Grid Paper
           </span>
         </div>
       </div>

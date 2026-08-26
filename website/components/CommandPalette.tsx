@@ -167,7 +167,7 @@ export default function CommandPalette({
         action: () => {
           onOpenChange(false)
           if (onSelectChapter) onSelectChapter('rough-notebook')
-          else router.push('/docs')
+          else router.push('/docs/manual?chapter=rough-notebook')
         },
       },
       {
@@ -181,7 +181,7 @@ export default function CommandPalette({
         action: () => {
           onOpenChange(false)
           if (onSelectChapter) onSelectChapter('lore')
-          else router.push('/docs')
+          else router.push('/docs/manual?chapter=lore')
         },
       },
       {
@@ -195,7 +195,7 @@ export default function CommandPalette({
         action: () => {
           onOpenChange(false)
           if (onSelectChapter) onSelectChapter('quickstart')
-          else router.push('/docs')
+          else router.push('/docs/manual?chapter=quickstart')
         },
       },
       {
@@ -209,7 +209,7 @@ export default function CommandPalette({
         action: () => {
           onOpenChange(false)
           if (onSelectChapter) onSelectChapter('auth')
-          else router.push('/docs')
+          else router.push('/docs/manual?chapter=auth')
         },
       },
       {
@@ -223,7 +223,7 @@ export default function CommandPalette({
         action: () => {
           onOpenChange(false)
           if (onSelectChapter) onSelectChapter('discovery')
-          else router.push('/docs')
+          else router.push('/docs/manual?chapter=discovery')
         },
       },
       {
@@ -237,7 +237,7 @@ export default function CommandPalette({
         action: () => {
           onOpenChange(false)
           if (onSelectChapter) onSelectChapter('git-engine')
-          else router.push('/docs')
+          else router.push('/docs/manual?chapter=git-engine')
         },
       },
       {
@@ -251,7 +251,7 @@ export default function CommandPalette({
         action: () => {
           onOpenChange(false)
           if (onSelectChapter) onSelectChapter('snapshots')
-          else router.push('/docs')
+          else router.push('/docs/manual?chapter=snapshots')
         },
       },
       {
@@ -265,7 +265,7 @@ export default function CommandPalette({
         action: () => {
           onOpenChange(false)
           if (onSelectChapter) onSelectChapter('cloud')
-          else router.push('/docs')
+          else router.push('/docs/manual?chapter=cloud')
         },
       },
       {
@@ -279,7 +279,7 @@ export default function CommandPalette({
         action: () => {
           onOpenChange(false)
           if (onSelectChapter) onSelectChapter('daemon')
-          else router.push('/docs')
+          else router.push('/docs/manual?chapter=daemon')
         },
       },
       {
@@ -293,7 +293,7 @@ export default function CommandPalette({
         action: () => {
           onOpenChange(false)
           if (onSelectChapter) onSelectChapter('concurrency')
-          else router.push('/docs')
+          else router.push('/docs/manual?chapter=concurrency')
         },
       },
       {
@@ -307,7 +307,7 @@ export default function CommandPalette({
         action: () => {
           onOpenChange(false)
           if (onSelectChapter) onSelectChapter('security')
-          else router.push('/docs')
+          else router.push('/docs/manual?chapter=security')
         },
       },
       {
@@ -321,7 +321,7 @@ export default function CommandPalette({
         action: () => {
           onOpenChange(false)
           if (onSelectChapter) onSelectChapter('disaster-recovery')
-          else router.push('/docs')
+          else router.push('/docs/manual?chapter=disaster-recovery')
         },
       },
       {
@@ -335,7 +335,7 @@ export default function CommandPalette({
         action: () => {
           onOpenChange(false)
           if (onSelectChapter) onSelectChapter('troubleshooting')
-          else router.push('/docs')
+          else router.push('/docs/manual?chapter=troubleshooting')
         },
       },
 
