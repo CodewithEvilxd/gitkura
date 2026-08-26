@@ -349,12 +349,12 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
             {cur.topNotes.map((note: any, idx: number) => (
               <div
                 key={idx}
-                className={`flex flex-col ${note.align} ${note.rotate} select-none`}
+                className={`flex flex-col ${note.align} ${note.rotate} select-none min-w-0`}
               >
-                <span className={`font-caveat font-extrabold text-xl sm:text-2xl lg:text-3xl ${note.color} leading-tight drop-shadow-[0_1px_1px_rgba(255,255,255,1)]`}>
+                <span className={`font-caveat font-extrabold text-xl sm:text-2xl lg:text-3xl ${note.color} leading-tight drop-shadow-[0_1px_1px_rgba(255,255,255,1)] break-words`}>
                   {note.title}
                 </span>
-                <span className="font-kalam text-xs sm:text-sm text-[#475569] font-bold">
+                <span className="font-kalam text-xs sm:text-sm text-[#475569] font-bold break-words">
                   {note.sub}
                 </span>
               </div>
@@ -378,12 +378,12 @@ export default function ChapterRoughNotebook({ setLightboxImg }: ChapterProps) {
             {cur.bottomNotes.map((note: any, idx: number) => (
               <div
                 key={idx}
-                className={`flex flex-col ${note.align} ${note.rotate} select-none`}
+                className={`flex flex-col ${note.align} ${note.rotate} select-none min-w-0`}
               >
-                <span className={`font-caveat font-extrabold text-xl sm:text-2xl lg:text-3xl ${note.color} leading-tight drop-shadow-[0_1px_1px_rgba(255,255,255,1)]`}>
+                <span className={`font-caveat font-extrabold text-xl sm:text-2xl lg:text-3xl ${note.color} leading-tight drop-shadow-[0_1px_1px_rgba(255,255,255,1)] break-words`}>
                   {note.title}
                 </span>
-                <span className="font-kalam text-xs sm:text-sm text-[#475569] font-bold">
+                <span className="font-kalam text-xs sm:text-sm text-[#475569] font-bold break-words">
                   {note.sub}
                 </span>
               </div>

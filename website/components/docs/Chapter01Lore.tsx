@@ -108,8 +108,8 @@ export default function Chapter01Lore({ setLightboxImg }: ChapterProps) {
                 1 failure = 100% lockout
               </span>
             </div>
-            <div className="font-mono text-xs text-[#475569] space-y-1.5 p-2.5 bg-white rounded-xl border border-[#ef4444]/20">
-              <div>{'[Dev Workstation] → [GitHub Remote Only]'}</div>
+            <div className="font-mono text-xs text-[#475569] space-y-1.5 p-2.5 bg-white rounded-xl border border-[#ef4444]/20 break-words">
+              <div className="break-all">{'[Dev Workstation] → [GitHub Remote Only]'}</div>
               <div className="text-[#dc2626] font-bold">
                 Risk: Automated compliance flag / Outage / Force-push
               </div>
@@ -128,8 +128,8 @@ export default function Chapter01Lore({ setLightboxImg }: ChapterProps) {
                 RTO &lt; 30s &bull; RPO &lt; 1hr
               </span>
             </div>
-            <div className="font-mono text-xs text-[#475569] space-y-1.5 p-2.5 bg-white rounded-xl border border-[#15803d]/20">
-              <div>{'[Dev Machine] → [Local AES-256 Vault] → [6 Multi-Cloud Targets]'}</div>
+            <div className="font-mono text-xs text-[#475569] space-y-1.5 p-2.5 bg-white rounded-xl border border-[#15803d]/20 break-words">
+              <div className="break-all">{'[Dev Machine] → [Local AES-256 Vault] → [6 Multi-Cloud Targets]'}</div>
               <div className="text-[#15803d] font-bold">
                 Redundancy: 1 local raw tree + 1 point-in-time tarball + 1 cloud
               </div>
@@ -142,11 +142,11 @@ export default function Chapter01Lore({ setLightboxImg }: ChapterProps) {
 
         {/* Sovereignty Math */}
         <div className="p-4 bg-[#fef3c7]/60 rounded-2xl border border-amber-300/60 flex flex-wrap items-center justify-between gap-3">
-          <div className="space-y-1">
+          <div className="space-y-1 min-w-0">
             <span className="text-[11px] font-mono font-bold text-amber-900 uppercase tracking-wider block">
               Sovereignty Math:
             </span>
-            <p className="font-caveat text-xl sm:text-2xl text-amber-950 font-bold">
+            <p className="font-caveat text-xl sm:text-2xl text-amber-950 font-bold break-words">
               Total_Security = Local_Raw_Tree + Encrypted_Snapshots(AES_256) + Zero_SaaS_Middleman
             </p>
           </div>

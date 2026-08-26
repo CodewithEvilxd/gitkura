@@ -103,22 +103,22 @@ export default function CodeTerminalBlock({
 
       {/* Code Body Area */}
       <div className="p-4 sm:p-5 overflow-x-auto text-[12px] sm:text-[13px] leading-relaxed max-h-[500px] overflow-y-auto no-scrollbar">
-        <pre className="table w-full">
+        <table className="w-full border-collapse font-code">
           <tbody>
             {lines.map((line, idx) => (
               <tr key={idx} className="hover:bg-slate-800/40">
                 {showLineNumbers && (
-                  <td className="w-8 pr-4 text-right select-none text-slate-600 font-mono text-[11px] border-r border-slate-800">
+                  <td className="w-8 pr-4 text-right select-none text-slate-600 font-mono text-[11px] border-r border-slate-800 align-top">
                     {idx + 1}
                   </td>
                 )}
-                <td className={`${showLineNumbers ? 'pl-4' : 'pl-0'} whitespace-pre font-code`}>
+                <td className={`${showLineNumbers ? 'pl-4' : 'pl-0'} whitespace-pre font-code align-top`}>
                   {formatCodeLine(line, activeLang)}
                 </td>
               </tr>
             ))}
           </tbody>
-        </pre>
+        </table>
       </div>
     </div>
   )

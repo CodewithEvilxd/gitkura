@@ -370,14 +370,14 @@ export default function DocsPage() {
       <main className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-6 sm:py-10 lg:py-14">
         {/* TOP HERO HEADER — PAPER PASSPORT & FIELD NOTEBOOK SPREAD */}
         <div className="space-y-4 mb-8 sm:mb-10">
-          <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-[#64748b]">
-            <Link href="/" className="hover:text-ink-blue underline">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#64748b] overflow-x-auto whitespace-nowrap no-scrollbar py-0.5">
+            <Link href="/" className="hover:text-ink-blue underline shrink-0">
               GitKura Home
             </Link>
-            <span>/</span>
-            <span className="text-ink-blue">Technical Documentation</span>
-            <span>/</span>
-            <span className="font-bold text-ink-blue truncate">Field Manual v1.1.0 Dossier</span>
+            <span className="shrink-0">/</span>
+            <span className="text-ink-blue shrink-0">Technical Docs</span>
+            <span className="shrink-0">/</span>
+            <span className="font-bold text-ink-blue shrink-0">Field Manual v1.1.0 Dossier</span>
           </div>
 
           <div className="scribely-card p-4 sm:p-7 lg:p-9 bg-[#fdfbf7] shadow-scribely-xl relative space-y-5 sm:space-y-6 border-2 sm:border-3 border-pencil-black rounded-2xl sm:rounded-3xl">

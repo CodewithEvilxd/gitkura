@@ -97,7 +97,7 @@ export default function Chapter11DisasterRecovery({ setLightboxImg }: ChapterPro
         </div>
 
         {/* 4 Scenario Selector Buttons */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 font-mono text-xs">
           {[
             { key: 'local', label: '1. GitHub Outage (0s)', sub: 'Local tree access' },
             { key: 'archive', label: '2. Upstream Deleted (5s)', sub: 'Extract .tar.gz' },
@@ -108,14 +108,14 @@ export default function Chapter11DisasterRecovery({ setLightboxImg }: ChapterPro
               key={s.key}
               type="button"
               onClick={() => setDrScenario(s.key as any)}
-              className={`p-3 rounded-2xl border-2 text-left transition-all cursor-pointer ${
+              className={`p-3 rounded-2xl border-2 text-left transition-all cursor-pointer break-words min-w-0 ${
                 drScenario === s.key
                   ? 'bg-ink-blue text-white border-pencil-black shadow-scribely-sm'
                   : 'bg-white text-ink-blue border-pencil-black/20 hover:border-pencil-black'
               }`}
             >
-              <span className="font-bold block">{s.label}</span>
-              <span className={`text-[10px] block mt-0.5 ${drScenario === s.key ? 'text-slate-300' : 'text-[#64748b]'}`}>
+              <span className="font-bold block break-words">{s.label}</span>
+              <span className={`text-[10px] block mt-0.5 break-words ${drScenario === s.key ? 'text-slate-300' : 'text-[#64748b]'}`}>
                 {s.sub}
               </span>
             </button>

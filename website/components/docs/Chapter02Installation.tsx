@@ -153,7 +153,7 @@ export default function Chapter02Installation() {
               CLI &amp; Package Manager Install One-Liners
             </span>
           </div>
-          <div className="flex gap-1.5">
+          <div className="flex flex-wrap gap-1.5">
             {[
               { key: 'winget', label: 'winget (Windows)' },
               { key: 'brew', label: 'Homebrew (macOS)' },

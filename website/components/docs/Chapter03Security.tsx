@@ -113,7 +113,7 @@ export default function Chapter03Security() {
           <Lock className="w-4 h-4 text-[#e11d48]" />
           <span>Token In-Memory Sanitization &amp; Masking Rule</span>
         </div>
-        <div className="p-3 bg-[#fff1f2] rounded-xl border border-rose-200 text-[#881337] font-mono text-xs">
+        <div className="p-3 bg-[#fff1f2] rounded-xl border border-rose-200 text-[#881337] font-mono text-xs overflow-x-auto break-all">
           <code>rawUrl.replace(/https:\/\/[^@]+@github\.com/, 'https://***@github.com')</code>
         </div>
         <p className="font-kalam text-sm text-[#475569]">

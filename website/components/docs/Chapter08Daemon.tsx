@@ -133,7 +133,7 @@ export default function Chapter08Daemon() {
               className="flex-1 p-2.5 bg-white border-2 border-pencil-black rounded-xl font-bold text-ink-blue text-sm focus:outline-none focus:ring-2 focus:ring-ink-blue shadow-scribely-xs"
               placeholder="e.g. 0 2 * * *"
             />
-            <div className="flex flex-wrap gap-1.5 self-center">
+            <div className="flex flex-wrap gap-1.5 self-start sm:self-center">
               {[
                 { label: 'Daily (2 AM)', expr: '0 2 * * *' },
                 { label: 'Weekly', expr: '0 3 * * 0' },

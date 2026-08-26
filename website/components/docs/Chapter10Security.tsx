@@ -95,14 +95,14 @@ export default function Chapter10Security({ setLightboxImg }: ChapterProps) {
         <div
           onClick={() =>
             setLightboxImg({
-              src: '/diagrams/security-architecture.jpg',
+              src: '/diagrams/zero-trust-sandboxing.jpg',
               caption: 'Figure 10.1: GitKura Electron Sandboxing & Process Boundary',
             })
           }
           className="relative w-full p-2.5 bg-[#fdfbf7] rounded-2xl border-2 border-pencil-black shadow-scribely-sm cursor-zoom-in"
         >
           <img
-            src="/diagrams/security-architecture.jpg"
+            src="/diagrams/zero-trust-sandboxing.jpg"
             alt="GitKura Electron Sandboxing & Process Boundary"
             draggable={false}
             className="w-full h-auto max-h-[520px] object-contain rounded-xl select-none pointer-events-none mix-blend-multiply"
@@ -130,7 +130,7 @@ export default function Chapter10Security({ setLightboxImg }: ChapterProps) {
             Defense-in-Depth
           </span>
         </div>
-        <div className="p-3 bg-white rounded-xl border border-pencil-black/10 space-y-2 text-[#475569]">
+        <div className="p-3 bg-white rounded-xl border border-pencil-black/10 space-y-2 text-[#475569] break-words">
           <div className="text-[#b91c1c] font-bold">
             [Renderer Web Context] &rarr; nodeIntegration: false, contextIsolation: true
           </div>
