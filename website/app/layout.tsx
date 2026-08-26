@@ -58,9 +58,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${patrickHand.variable} ${caveat.variable} ${architectsDaughter.variable} ${outfit.variable} ${spaceMono.variable}`}
     >
-      <body className="bg-paper-off-white text-pencil-black min-h-screen flex flex-col antialiased">
+      <body
+        suppressHydrationWarning
+        className="bg-paper-off-white text-pencil-black min-h-screen flex flex-col antialiased"
+      >
         <ImageProtection />
         <BrushFilterDefs />
         {children}
